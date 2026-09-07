@@ -72,6 +72,8 @@ button:disabled{opacity:.6;cursor:not-allowed}
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
 import {
   getAuth,
+  setPersistence,
+  browserLocalPersistence,
   signInWithEmailAndPassword,
   sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
@@ -131,6 +133,7 @@ form.addEventListener("submit", async (e) => {
   show("Login check ho raha hai...", true);
 
   try{
+    await setPersistence(auth, browserLocalPersistence);
     await signInWithEmailAndPassword(auth, mail, pass);
     show("Login successful. Dashboard open ho raha hai...", true);
     setTimeout(() => {

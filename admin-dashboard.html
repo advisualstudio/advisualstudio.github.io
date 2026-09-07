@@ -5,104 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard | AdVisual Studio</title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
 body{min-height:100vh;color:#fff;background:#050c08}
-header{
-  min-height:82px;padding:16px 5%;display:flex;align-items:center;
-  justify-content:space-between;border-bottom:1px solid #243b2b;background:#08120c
-}
-.brand{display:flex;align-items:center;gap:16px}
-.brand img{width:auto;height:48px;max-width:170px;object-fit:contain}
-.brand span{color:#9eafa3;font-size:14px}
-.logout{
-  border:1px solid #405846;border-radius:10px;padding:11px 18px;
-  background:#0c190f;color:#fff;font-weight:700;cursor:pointer
-}
-.logout:hover{border-color:#b8ff35;color:#b8ff35}
-main{width:min(1100px,90%);margin:50px auto}
-.hero{
-  padding:42px;border:1px solid #284331;border-radius:25px;
-  background:#0a160f;box-shadow:0 25px 80px rgba(0,0,0,.35)
-}
-.badge{
-  display:inline-block;padding:7px 12px;border-radius:999px;
-  background:rgba(184,255,53,.1);color:#b8ff35;font-size:13px;font-weight:700
-}
-h1{margin:18px 0 8px;font-size:42px}
-.email{color:#9eafa3;font-size:18px}
-.grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px
-}
-.box{
-  padding:25px;border:1px solid #284331;border-radius:18px;background:#08120c
-}
-.box h2{margin:0 0 10px;font-size:19px}
-.box p{margin:0;color:#9eafa3;line-height:1.5}
-.status{color:#b8ff35!important;font-weight:700}
-.back{
-  display:inline-block;margin-top:30px;color:#9eafa3;text-decoration:none
-}
-.back:hover{color:#b8ff35}
-#loading{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  color:#b8ff35;font-size:22px
-}
-#error{
-  display:none;max-width:650px;margin:100px auto;padding:30px;
-  border:1px solid #613838;border-radius:18px;background:#180c0c;color:#ffaaaa;
-  text-align:center
-}
-@media(max-width:750px){
-  .grid{grid-template-columns:1fr}
-  h1{font-size:32px}.hero{padding:28px}
-  header{padding:14px 5%}
-  .brand span{display:none}
-}
+header{min-height:82px;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #243b2b;background:#08120c}
+.brand{display:flex;align-items:center;gap:16px}.brand img{width:auto;height:48px;max-width:170px;object-fit:contain}
+.brand span{color:#9eafa3;font-size:14px}.logout{border:1px solid #405846;border-radius:10px;padding:11px 18px;background:#0c190f;color:#fff;font-weight:700;cursor:pointer}
+main{width:min(1100px,90%);margin:50px auto}.hero{padding:42px;border:1px solid #284331;border-radius:25px;background:#0a160f;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:rgba(184,255,53,.1);color:#b8ff35;font-size:13px;font-weight:700}
+h1{margin:18px 0 8px;font-size:42px}.email{color:#9eafa3;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}.box{padding:25px;border:1px solid #284331;border-radius:18px;background:#08120c}
+.box h2{margin:0 0 10px;font-size:19px}.box p{margin:0;color:#9eafa3;line-height:1.5}.status{color:#b8ff35!important;font-weight:700}
+.back{display:inline-block;margin-top:30px;color:#9eafa3;text-decoration:none}.back:hover{color:#b8ff35}
+#loading{min-height:100vh;display:flex;align-items:center;justify-content:center;color:#b8ff35;font-size:22px}
+#error{display:none;max-width:650px;margin:100px auto;padding:30px;border:1px solid #613838;border-radius:18px;background:#180c0c;color:#ffaaaa;text-align:center}
+@media(max-width:750px){.grid{grid-template-columns:1fr}h1{font-size:32px}.hero{padding:28px}.brand span{display:none}}
 </style>
 </head>
 <body>
-
 <div id="loading">Checking admin access...</div>
-
 <div id="error">
-  <h2>Admin access required</h2>
-  <p id="errorText">Please login first.</p>
-  <a class="back" href="admin.html">← Go to Admin Login</a>
+<h2>Admin access required</h2>
+<p id="errorText">Please login first.</p>
+<a class="back" href="admin.html">← Go to Admin Login</a>
 </div>
-
 <div id="app" style="display:none">
 <header>
-  <div class="brand">
-    <img src="Logo.png" alt="AdVisual Studio">
-    <span>ADMIN DASHBOARD</span>
-  </div>
-  <button class="logout" id="logoutBtn">Logout</button>
+<div class="brand"><img src="Logo.png" alt="AdVisual Studio"><span>ADMIN DASHBOARD</span></div>
+<button class="logout" id="logoutBtn">Logout</button>
 </header>
-
 <main>
-  <section class="hero">
-    <span class="badge">● AUTHENTICATED</span>
-    <h1>Welcome, Admin 👋</h1>
-    <div class="email" id="adminEmail"></div>
-
-    <div class="grid">
-      <div class="box">
-        <h2>🔐 Authentication</h2>
-        <p class="status">Secure login active</p>
-      </div>
-      <div class="box">
-        <h2>📧 Admin Account</h2>
-        <p id="accountEmail">Loading...</p>
-      </div>
-      <div class="box">
-        <h2>🌐 Portfolio</h2>
-        <p>AdVisual Studio portfolio is connected.</p>
-      </div>
-    </div>
-
-    <a class="back" href="index.html">← Back to Portfolio</a>
-  </section>
+<section class="hero">
+<span class="badge">● AUTHENTICATED</span>
+<h1>Welcome, Admin 👋</h1>
+<div class="email" id="adminEmail"></div>
+<div class="grid">
+<div class="box"><h2>🔐 Authentication</h2><p class="status">Secure login active</p></div>
+<div class="box"><h2>📧 Admin Account</h2><p id="accountEmail">Loading...</p></div>
+<div class="box"><h2>🌐 Portfolio</h2><p>AdVisual Studio portfolio is connected.</p></div>
+</div>
+<a class="back" href="index.html">← Back to Portfolio</a>
+</section>
 </main>
 </div>
 
@@ -110,59 +52,68 @@ h1{margin:18px 0 8px;font-size:42px}
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
 import {
   getAuth,
+  setPersistence,
+  browserLocalPersistence,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyC6LIAjmG6lPTYXZXXc0v2cAmK1jL9xRJw",
-  authDomain: "advisual-studio-admin.firebaseapp.com",
-  projectId: "advisual-studio-admin",
-  storageBucket: "advisual-studio-admin.firebasestorage.app",
-  messagingSenderId: "883242532024",
-  appId: "1:883242532024:web:896cda30f0401c8ac5884d",
-  measurementId: "G-6XH4DTWZJD"
+const firebaseConfig={
+  apiKey:"AIzaSyC6LIAjmG6lPTYXZXXc0v2cAmK1jL9xRJw",
+  authDomain:"advisual-studio-admin.firebaseapp.com",
+  projectId:"advisual-studio-admin",
+  storageBucket:"advisual-studio-admin.firebasestorage.app",
+  messagingSenderId:"883242532024",
+  appId:"1:883242532024:web:896cda30f0401c8ac5884d",
+  measurementId:"G-6XH4DTWZJD"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const loading=document.getElementById("loading");
+const appBox=document.getElementById("app");
+const errorBox=document.getElementById("error");
+const errorText=document.getElementById("errorText");
+const adminEmail=document.getElementById("adminEmail");
+const accountEmail=document.getElementById("accountEmail");
+const logoutBtn=document.getElementById("logoutBtn");
 
-const loading = document.getElementById("loading");
-const appBox = document.getElementById("app");
-const errorBox = document.getElementById("error");
-const errorText = document.getElementById("errorText");
-const adminEmail = document.getElementById("adminEmail");
-const accountEmail = document.getElementById("accountEmail");
-const logoutBtn = document.getElementById("logoutBtn");
-
-onAuthStateChanged(auth, (user) => {
-  loading.style.display = "none";
-
-  if (user) {
-    adminEmail.textContent = user.email || "Admin";
-    accountEmail.textContent = user.email || "Admin";
-    appBox.style.display = "block";
-    errorBox.style.display = "none";
-  } else {
-    appBox.style.display = "none";
-    errorBox.style.display = "block";
-    errorText.textContent = "Please login from the Admin Login page.";
+async function start(){
+  try{
+    await setPersistence(auth,browserLocalPersistence);
+    onAuthStateChanged(auth,(user)=>{
+      loading.style.display="none";
+      if(user){
+        adminEmail.textContent=user.email||"Admin";
+        accountEmail.textContent=user.email||"Admin";
+        appBox.style.display="block";
+        errorBox.style.display="none";
+      }else{
+        appBox.style.display="none";
+        errorBox.style.display="block";
+      }
+    });
+  }catch(error){
+    loading.style.display="none";
+    errorBox.style.display="block";
+    errorText.textContent="Firebase session error: "+(error.code||error.message);
   }
-});
+}
 
-logoutBtn.addEventListener("click", async () => {
-  logoutBtn.disabled = true;
-  logoutBtn.textContent = "Logging out...";
-  try {
+logoutBtn.addEventListener("click",async()=>{
+  logoutBtn.disabled=true;
+  logoutBtn.textContent="Logging out...";
+  try{
     await signOut(auth);
-    window.location.replace("admin.html");
-  } catch (error) {
-    console.error(error);
-    logoutBtn.disabled = false;
-    logoutBtn.textContent = "Logout";
+    window.location.href="admin.html";
+  }catch(error){
+    logoutBtn.disabled=false;
+    logoutBtn.textContent="Logout";
     alert("Logout failed. Please try again.");
   }
 });
+
+start();
 </script>
 </body>
 </html>
