@@ -3,37 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Login | Advisual Studio</title>
+<title>Admin Login | AdVisual Studio</title>
 <style>
-*{box-sizing:border-box} body{margin:0;min-height:100vh;background:#07100b;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:100%;max-width:430px;background:#0d1711;border:1px solid #263c2b;border-radius:24px;padding:34px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
-.logo{text-align:center;margin-bottom:26px} .logo img{max-width:145px;max-height:70px;object-fit:contain}
-h1{font-size:30px;margin:0 0 8px;text-align:center} .sub{text-align:center;color:#9caf9f;margin:0 0 28px}
-label{display:block;font-size:14px;font-weight:700;margin:16px 0 8px} input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid #36523c;background:#08100b;color:#fff;font-size:16px;outline:none} input:focus{border-color:#b8ff35}
-button{width:100%;border:0;border-radius:12px;padding:14px 16px;margin-top:20px;background:#b8ff35;color:#081008;font-size:16px;font-weight:800;cursor:pointer}
-button:disabled{opacity:.6;cursor:not-allowed}
-.forgot{display:block;text-align:center;margin-top:17px;color:#b8ff35;text-decoration:none;cursor:pointer;font-size:14px}
-.msg{min-height:22px;margin-top:17px;text-align:center;font-size:14px;color:#c9d8ca}
-.back{display:block;text-align:center;margin-top:22px;color:#9caf9f;text-decoration:none;font-size:13px}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(184,255,53,.08),transparent 35%),
+    #050c08;
+}
+.card{
+  width:100%;
+  max-width:650px;
+  padding:42px 52px;
+  border:1px solid #284331;
+  border-radius:28px;
+  background:rgba(10,22,15,.96);
+  box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+.logo{text-align:center;margin-bottom:28px}
+.logo img{
+  width:auto;
+  max-width:220px;
+  max-height:95px;
+  object-fit:contain;
+}
+h1{
+  margin:0;
+  text-align:center;
+  font-size:42px;
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+.sub{
+  margin:12px 0 36px;
+  text-align:center;
+  color:#9eafa3;
+  font-size:21px;
+}
+label{
+  display:block;
+  margin:0 0 9px;
+  font-size:18px;
+  font-weight:700;
+}
+.field{margin-bottom:24px}
+input{
+  width:100%;
+  height:72px;
+  padding:0 22px;
+  border:1px solid #31503a;
+  border-radius:17px;
+  outline:none;
+  background:#08120c;
+  color:#fff;
+  font-size:20px;
+}
+input::placeholder{color:#68766c}
+input:focus{
+  border-color:#b8ff35;
+  box-shadow:0 0 0 3px rgba(184,255,53,.08);
+}
+button{
+  width:100%;
+  height:76px;
+  border:0;
+  border-radius:17px;
+  background:#b8ff35;
+  color:#071006;
+  font-size:24px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.15s ease;
+}
+button:hover{transform:translateY(-1px);filter:brightness(1.04)}
+button:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.forgot{
+  display:block;
+  margin:24px 0 0;
+  text-align:center;
+  color:#b8ff35;
+  font-size:19px;
+  text-decoration:none;
+  cursor:pointer;
+}
+.forgot:hover{text-decoration:underline}
+.msg{
+  min-height:28px;
+  margin-top:20px;
+  text-align:center;
+  font-size:16px;
+  line-height:1.45;
+}
+.back{
+  display:block;
+  margin-top:30px;
+  text-align:center;
+  color:#9eafa3;
+  font-size:18px;
+  text-decoration:none;
+}
+.back:hover{color:#fff}
+.note{
+  margin-top:22px;
+  padding:12px 14px;
+  border-radius:12px;
+  background:#0a150e;
+  color:#66766b;
+  text-align:center;
+  font-size:12px;
+}
+@media(max-width:600px){
+  body{padding:14px}
+  .card{padding:30px 22px;border-radius:22px}
+  h1{font-size:32px}
+  .sub{font-size:17px;margin-bottom:28px}
+  input{height:62px;font-size:17px}
+  button{height:64px;font-size:21px}
+}
 </style>
 </head>
+
 <body>
-<div class="card">
-  <div class="logo"><img src="Logo.png" alt="Advisual Studio"></div>
+<main class="card">
+  <div class="logo">
+    <img src="Logo.png" alt="AdVisual Studio">
+  </div>
+
   <h1>Admin Login</h1>
   <p class="sub">Advisual Studio Portfolio</p>
 
-  <label for="email">Admin Email</label>
-  <input id="email" type="email" autocomplete="username" placeholder="Enter admin Gmail">
+  <form id="loginForm" novalidate>
+    <div class="field">
+      <label for="email">Admin Email</label>
+      <input
+        id="email"
+        type="email"
+        autocomplete="username"
+        placeholder="Enter admin Gmail"
+        value="advisualstudiodesign@gmail.com"
+      >
+    </div>
 
-  <label for="password">Password</label>
-  <input id="password" type="password" autocomplete="current-password" placeholder="Enter password">
+    <div class="field">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="Enter password"
+      >
+    </div>
 
-  <button id="loginBtn">Login</button>
-  <a class="forgot" id="forgotBtn">Forgot Password?</a>
-  <div class="msg" id="msg"></div>
+    <button id="loginBtn" type="submit">Login</button>
+  </form>
+
+  <a class="forgot" id="forgotBtn" href="#">Forgot Password?</a>
+
+  <div class="msg" id="msg" aria-live="polite"></div>
+
   <a class="back" href="index.html">← Back to Portfolio</a>
-</div>
+
+  <div class="note">Secure admin access powered by Firebase Authentication.</div>
+</main>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
@@ -44,66 +182,126 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-const firebaseConfig = {'apiKey': 'AIzaSyC6LIAjmG6lPTYXZXXc0v2cAmK1jL9xRJw', 'authDomain': 'advisual-studio-admin.firebaseapp.com', 'projectId': 'advisual-studio-admin', 'storageBucket': 'advisual-studio-admin.firebasestorage.app', 'messagingSenderId': '883242532024', 'appId': '1:883242532024:web:896cda30f0401c8ac5884d', 'measurementId': 'G-6XH4DTWZJD'};
+/*
+  Firebase Web App configuration
+  Project: Advisual Studio Admin
+*/
+const firebaseConfig = {
+  apiKey: "AIzaSyC6LIAjmG6lPTYXZXXc0v2cAmK1jL9xRJw",
+  authDomain: "advisual-studio-admin.firebaseapp.com",
+  projectId: "advisual-studio-admin",
+  storageBucket: "advisual-studio-admin.firebasestorage.app",
+  messagingSenderId: "883242532024",
+  appId: "1:883242532024:web:896cda30f0401c8ac5884d",
+  measurementId: "G-6XH4DTWZJD"
+};
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const form = document.getElementById("loginForm");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const msg = document.getElementById("msg");
 const loginBtn = document.getElementById("loginBtn");
+const forgotBtn = document.getElementById("forgotBtn");
+const msg = document.getElementById("msg");
 
-function show(text, ok=false) {
-  msg.textContent = text;
-  msg.style.color = ok ? "#b8ff35" : "#ff9b9b";
+function show(message, success = false) {
+  msg.textContent = message;
+  msg.style.color = success ? "#b8ff35" : "#ff9b9b";
 }
 
-onAuthStateChanged(auth, user => {
-  if (user) window.location.href = "admin-dashboard.html";
-});
+function firebaseMessage(code) {
+  const messages = {
+    "auth/api-key-not-valid":
+      "Firebase API key valid nahi hai. Firebase Console ki current Web App config check karo.",
+    "auth/invalid-api-key":
+      "Firebase API key invalid hai. Firebase Console ki current Web App config check karo.",
+    "auth/invalid-credential":
+      "Email ya password galat hai.",
+    "auth/invalid-email":
+      "Email address sahi format mein nahi hai.",
+    "auth/user-not-found":
+      "Is email ka Admin user Firebase Authentication mein nahi mila.",
+    "auth/wrong-password":
+      "Password galat hai.",
+    "auth/too-many-requests":
+      "Bahut login attempts ho gaye hain. Thodi der baad dobara try karo.",
+    "auth/network-request-failed":
+      "Internet/network problem. Dobara try karo.",
+    "auth/operation-not-allowed":
+      "Firebase mein Email/Password sign-in enabled nahi hai.",
+    "auth/unauthorized-domain":
+      "Ye website Firebase Authorized Domains mein add nahi hai."
+  };
+  return messages[code] || ("Firebase error: " + code);
+}
 
-email.addEventListener("keydown", e => {
-  if (e.key === "Enter") loginBtn.click();
-});
-password.addEventListener("keydown", e => {
-  if (e.key === "Enter") loginBtn.click();
-});
-
-loginBtn.addEventListener("click", async () => {
-  const e = email.value.trim();
-  const p = password.value;
-  if (!e || !p) return show("Email aur password dono enter karo.");
-  loginBtn.disabled = true;
-  show("Logging in...", true);
-  try {
-    await signInWithEmailAndPassword(auth, e, p);
-    window.location.href = "admin-dashboard.html";
-  } catch (err) {
-    loginBtn.disabled = false;
-    console.error("Firebase login error:", err);
-    const code = err?.code || "unknown-error";
-    const messages = {
-      "auth/invalid-api-key": "Firebase API key invalid hai. Firebase config dobara check karo.",
-      "auth/api-key-not-valid": "Firebase API key valid nahi hai. Firebase Console ki exact Web App config use karo.",
-      "auth/invalid-credential": "Email ya password galat hai.",
-      "auth/invalid-email": "Email address sahi format mein nahi hai.",
-      "auth/user-not-found": "Is email ka Admin user Firebase mein nahi mila.",
-      "auth/wrong-password": "Password galat hai.",
-      "auth/too-many-requests": "Bahut attempts ho gaye. Thodi der baad try karo.",
-      "auth/network-request-failed": "Internet/network problem. Dobara try karo."
-    };
-    show(messages[code] || ("Firebase error: " + code));
+/* If already logged in, open dashboard */
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.replace("admin-dashboard.html");
   }
 });
 
-document.getElementById("forgotBtn").addEventListener("click", async () => {
+/* Login */
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
   const e = email.value.trim();
-  if (!e) return show("Pehle Admin Email enter karo.");
+  const p = password.value;
+
+  if (!e) {
+    show("Admin Email enter karo.");
+    email.focus();
+    return;
+  }
+
+  if (!p) {
+    show("Password enter karo.");
+    password.focus();
+    return;
+  }
+
+  loginBtn.disabled = true;
+  show("Logging in...", true);
+
+  try {
+    await signInWithEmailAndPassword(auth, e, p);
+    show("Login successful. Dashboard open ho raha hai...", true);
+    window.location.replace("admin-dashboard.html");
+  } catch (error) {
+    console.error("Firebase login error:", error);
+    loginBtn.disabled = false;
+    show(firebaseMessage(error?.code || "unknown-error"));
+  }
+});
+
+/* Forgot password */
+forgotBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const e = email.value.trim();
+
+  if (!e) {
+    show("Pehle Admin Email enter karo.");
+    email.focus();
+    return;
+  }
+
+  forgotBtn.style.pointerEvents = "none";
+  show("Password reset email bhej rahe hain...", true);
+
   try {
     await sendPasswordResetEmail(auth, e);
     show("Password reset link tumhari Gmail par bhej diya gaya hai.", true);
-  } catch (err) {
-    show("Reset email nahi bhej paaya. Email check karo.");
+  } catch (error) {
+    console.error("Firebase reset error:", error);
+    show(firebaseMessage(error?.code || "reset-error"));
+  } finally {
+    setTimeout(() => {
+      forgotBtn.style.pointerEvents = "";
+    }, 1500);
   }
 });
 </script>
