@@ -68,7 +68,10 @@ loginBtn.addEventListener("click", async () => {
     window.location.href = "admin-dashboard.html";
   } catch (err) {
     loginBtn.disabled = false;
-    show("Login failed. Email ya password check karo.");
+    console.error("Firebase login error:", err);
+    const code = err?.code || "unknown-error";
+    const detail = code.replace("auth/", "");
+    show("Firebase error: " + detail);
   }
 });
 
