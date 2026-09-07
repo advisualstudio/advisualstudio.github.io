@@ -365,6 +365,112 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   .footer-inner{display:block}
   .footer-inner span,.footer-inner a{display:block;margin:7px 0}
 }
+
+/* ===== REFERENCE-STYLE CTA / WHY / FOOTER BRAND ===== */
+.why-section{
+  background:
+    radial-gradient(circle at 78% 35%,rgba(156,255,0,.10),transparent 30%),
+    linear-gradient(135deg,#0b1009,#10170d 55%,#080a08);
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+.why-copy p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  max-width:560px;
+}
+.why-list{display:grid;gap:14px}
+.why-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 22px;
+  border-radius:40px;
+  background:linear-gradient(90deg,rgba(29,41,23,.95),rgba(18,22,16,.95));
+  border:1px solid rgba(156,255,0,.08);
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+  font-size:13px;
+}
+.why-check{
+  width:22px;height:22px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--green);color:#0a0d08;
+  font-weight:900;font-size:12px;flex:none
+}
+.hire-cta{
+  padding:105px 0;
+  background:
+    radial-gradient(circle at 75% 50%,rgba(156,255,0,.13),transparent 30%),
+    linear-gradient(135deg,#11180d,#263b1b 55%,#0a0d08);
+}
+.hire-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:35px;
+  background:rgba(18,26,14,.55);
+  border:1px solid rgba(156,255,0,.12);
+  border-radius:22px;padding:50px 55px;
+}
+.hire-copy h2{margin-top:10px}
+.hire-copy p{color:var(--muted);font-size:13px;line-height:1.7;margin:15px 0 0}
+.hire-actions{display:flex;align-items:center;gap:18px;flex:none}
+.hire-play{
+  width:68px;height:68px;border-radius:50%;
+  background:var(--green);color:#0a0d08;
+  display:grid;place-items:center;
+  font-size:24px;border:10px solid rgba(156,255,0,.08);
+  box-shadow:0 0 0 10px rgba(156,255,0,.05);
+}
+.footer-brand{
+  display:flex;align-items:flex-start;gap:18px;
+}
+.footer-logo{width:155px;height:auto;max-height:65px;object-fit:contain;object-position:left center}
+.footer-desc{max-width:330px;color:#8d9687;font-size:11px;line-height:1.7;margin:12px 0 0}
+.footer-socials{display:flex;gap:7px;margin-top:15px}
+.footer-socials a{
+  width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;background:var(--green);color:#0a0d08;
+  font-size:9px;font-weight:800;transition:.2s
+}
+.footer-socials a:hover{background:var(--yellow);transform:translateY(-2px)}
+.footer-heading{font-size:18px;font-weight:800;margin:0 0 16px}
+.footer-links{display:grid;gap:9px}
+.footer-links a{font-size:11px;color:#9da59a;transition:.2s}
+.footer-links a:hover{color:var(--green)}
+.footer-contact{display:grid;gap:9px}
+.footer-contact a{font-size:11px;color:#9da59a}
+.footer-contact a:hover{color:var(--green)}
+@media(max-width:800px){
+  .why-grid{grid-template-columns:1fr}
+  .hire-inner{display:block;padding:35px 25px}
+  .hire-actions{margin-top:28px}
+  .footer-brand{display:block}
+}
+@media(max-width:600px){
+  .hire-actions{gap:13px}
+  .hire-play{width:58px;height:58px}
+  .footer-logo{width:145px}
+}
+
+
+@media(max-width:600px){
+  footer .container > div:first-child{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+  footer .container > div:last-child{
+    display:block !important;
+  }
+  footer .container > div:last-child span,
+  footer .container > div:last-child a{
+    display:block;
+    margin:7px 0;
+  }
+}
+
 </style>
 </head>
 
@@ -546,11 +652,29 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   </div>
 </section>
 
+
+<section class="section why-section" id="why">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <div class="section-kicker">05 / Why Work With Me</div>
+      <h2>CREATIVE IDEAS<br>TO ELEVATE YOUR <em>BRAND.</em></h2>
+      <p>I combine editing, motion graphics and visual design to turn raw footage and ideas into content that looks professional, communicates clearly and keeps viewers watching.</p>
+      <p><strong style="color:#f5f7f2">Advisual Studio</strong> also supports creative ads, posters and thumbnails when your brand needs more than just video editing.</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item"><span class="why-check">✓</span><span>Creative Video Editing</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Engaging Visual Storytelling</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Motion Graphics & Social Creatives</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Fast & Reliable Delivery</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="section packages" id="packages">
   <div class="container">
     <div class="section-top">
       <div>
-        <div class="section-kicker">05 / Editing Plans</div>
+        <div class="section-kicker">06 / Editing Plans</div>
         <h2>CHOOSE YOUR<br><em>EDITING NEED.</em></h2>
       </div>
       <p>Instead of fixed public pricing, every project can be quoted according to duration, complexity, turnaround and deliverables.</p>
@@ -592,7 +716,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   <div class="container">
     <div class="section-top">
       <div>
-        <div class="section-kicker">06 / Posters & Banners</div>
+        <div class="section-kicker">07 / Posters & Banners</div>
         <h2>DESIGN <em>WORK.</em></h2>
       </div>
       <p>Poster and banner designs created for education, promotions, social media and digital campaigns.</p>
@@ -627,7 +751,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   <div class="container">
     <div class="section-top">
       <div>
-        <div class="section-kicker">07 / Core Skills</div>
+        <div class="section-kicker">08 / Core Skills</div>
         <h2>THE TOOLS<br>BEHIND <em>MY WORK.</em></h2>
       </div>
     </div>
@@ -647,7 +771,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   <div class="container">
     <div class="contact-box">
       <div>
-        <div class="section-kicker">08 / Contact</div>
+        <div class="section-kicker">09 / Contact</div>
         <h2>LET'S CREATE<br><em>SOMETHING.</em></h2>
         <p>Have a project in mind? Send the details or contact me directly. I’ll get back to you with the next steps.</p>
 
@@ -667,44 +791,93 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
         </div>
       </div>
 
-      <form class="form" id="contactForm" onsubmit="event.preventDefault();alert('Your message form is ready. To receive submissions by email, connect a form service such as Formspree or FormSubmit.');">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <select required>
-          <option value="">Select Service</option>
-          <option>Short Video Editing</option>
-          <option>Long Video Editing</option>
-          <option>Educational Video</option>
-          <option>Corporate Video</option>
-          <option>Motion Graphics</option>
-          <option>Posters & Banners</option>
-        </select>
-        <input type="text" placeholder="Subject">
-        <textarea placeholder="Tell me about your project"></textarea>
-        <button class="btn" type="submit">Send Message ↗</button>
-      </form>
+      
+<form class="form" id="contactForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <select name="service" required>
+    <option value="">Select Service</option>
+    <option>Short Video Editing</option>
+    <option>Long Video Editing</option>
+    <option>Educational Video</option>
+    <option>Corporate Video</option>
+    <option>Motion Graphics</option>
+    <option>Posters & Banners</option>
+  </select>
+  <input type="text" name="subject" placeholder="Subject">
+  <textarea name="message" placeholder="Write Your Message" required></textarea>
+  <button class="btn" type="submit" id="sendMessageBtn">Send Message ↗</button>
+  <div id="formStatus" style="display:none;font-size:11px;line-height:1.6;color:#c4d0c3"></div>
+</form>
+
     </div>
   </div>
 </section>
 
+
 <section class="hire-cta" id="hire">
-  <div class="container">
-    <div class="section-kicker">09 / Hire Me</div>
-    <h2>HAVE A VIDEO<br>TO <em>EDIT?</em></h2>
-    <p>Let's turn your footage into something people want to watch.</p>
-    <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%20have%20a%20video%20editing%20project%20and%20would%20like%20to%20discuss%20it." target="_blank" rel="noopener">WhatsApp Me ↗</a>
+  <div class="container hire-inner">
+    <div class="hire-copy">
+      <div class="section-kicker">10 / Hire Me</div>
+      <h2>HAVE A VIDEO<br>TO <em>EDIT?</em></h2>
+      <p>Let's turn your footage into something people want to watch.</p>
+    </div>
+    <div class="hire-actions">
+      <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%20have%20a%20video%20editing%20project%20and%20would%20like%20to%20discuss%20it." target="_blank" rel="noopener">💼 Hire Me Now</a>
+      <a class="hire-play" href="#reel" aria-label="Watch showreel">▷</a>
+    </div>
   </div>
 </section>
 
+
 </main>
 
+
 <footer>
-  <div class="container footer-inner">
-    <span>© 2026 GAGAN GAUTAM</span>
-    <span>VIDEO EDITOR · ADVISUAL STUDIO</span>
-    <a href="#home">Back to top ↑</a>
+  <div class="container" style="padding-bottom:28px">
+    <div style="display:grid;grid-template-columns:1.15fr .75fr .9fr;gap:55px;align-items:start">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="Logo.png" alt="Advisual Studio">
+        </div>
+        <p class="footer-desc">Creative Ads & Branding • Video Ads • Posters • Thumbnails. Grow your business with creative design and engaging video content.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">IG</a>
+          <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA</a>
+          <a href="mailto:advisualstudiodesign@gmail.com">✉</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">» Home</a>
+          <a href="#about">» About Me</a>
+          <a href="#services">» Services</a>
+          <a href="#work">» Projects</a>
+          <a href="#designs">» Designs</a>
+          <a href="#contact">» Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <div class="footer-contact">
+          <a href="tel:+917827610998">☎ +91 78276 10998</a>
+          <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA +91 93698 47401</a>
+          <a href="mailto:advisualstudiodesign@gmail.com">✉ advisualstudiodesign@gmail.com</a>
+          <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">◎ @advisualstudioofficial</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(156,255,0,.12);margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#70796d;font-size:10px">
+      <span>© 2026 GAGAN GAUTAM · ADVISUAL STUDIO</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
   </div>
 </footer>
+
 
 <script>
 (function(){
@@ -749,6 +922,79 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
         },100);
       }
     });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const form = document.getElementById('contactForm');
+  const button = document.getElementById('sendMessageBtn');
+  const status = document.getElementById('formStatus');
+
+  if(!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const name = data.get('name') || '';
+    const email = data.get('email') || '';
+    const service = data.get('service') || '';
+    const subject = data.get('subject') || 'Website Project Inquiry';
+    const message = data.get('message') || '';
+
+    // WhatsApp opens immediately from the user's click.
+    const waText =
+      'Hi Gagan, I am interested in your services.%0A%0A' +
+      'Name: ' + encodeURIComponent(name) + '%0A' +
+      'Email: ' + encodeURIComponent(email) + '%0A' +
+      'Service: ' + encodeURIComponent(service) + '%0A' +
+      'Subject: ' + encodeURIComponent(subject) + '%0A' +
+      'Message: ' + encodeURIComponent(message);
+
+    window.open('https://wa.me/919369847401?text=' + waText, '_blank');
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    status.style.display = 'block';
+    status.textContent = 'Sending your enquiry...';
+
+    try{
+      const response = await fetch('https://formsubmit.co/ajax/advisualstudiodesign@gmail.com',{
+        method:'POST',
+        headers:{
+          'Accept':'application/json',
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+          name:name,
+          email:email,
+          service:service,
+          subject:subject,
+          message:message,
+          _subject:'New Gagan Gautam Portfolio Enquiry',
+          _template:'table'
+        })
+      });
+
+      const result = await response.json();
+
+      if(result.success){
+        status.textContent = '✓ Message sent successfully. Your WhatsApp chat is also ready.';
+        status.style.color = '#9cff00';
+        form.reset();
+      }else{
+        throw new Error('Form submission failed');
+      }
+    }catch(error){
+      status.textContent = 'WhatsApp chat has been opened. Please press Send there. Email delivery may need first-time FormSubmit activation.';
+      status.style.color = '#ffc400';
+    }finally{
+      button.disabled = false;
+      button.textContent = 'Send Message ↗';
+    }
   });
 })();
 </script>
