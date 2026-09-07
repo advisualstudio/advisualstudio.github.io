@@ -24,7 +24,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 .contact{background:linear-gradient(180deg,#11170e,#090b09)}.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:35px;background:#151b12;border:1px solid #283523;border-radius:15px;padding:45px}.contact h2{margin-top:0}.contact-list{display:grid;gap:16px;margin-top:30px}.contact-list a{border-bottom:1px solid #30392b;padding-bottom:13px;color:#ddd}.contact-list a:hover{color:var(--green)}.form{display:grid;gap:13px}.form input,.form textarea,.form select{width:100%;background:#0d100d;border:1px solid #35402f;border-radius:28px;padding:15px 18px;color:#eee;font:inherit;font-size:12px;outline:none}.form textarea{border-radius:15px;min-height:125px;resize:vertical}.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--green)}
 footer{border-top:1px solid #1c211c;padding:28px 0;color:#73796f;font-size:10px}footer .container{display:flex;justify-content:space-between;gap:20px}
 @media(max-width:800px){nav{display:none}.nav-cta{display:none}.hero{padding-top:55px}.hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}.hero-card{width:85%;margin:0 auto}.section-top{display:block}.section-top>p{margin-top:18px}.work-grid,.tool-grid,.service-grid{grid-template-columns:1fr}.service,.service:nth-child(3n+2),.service:nth-child(3n+3){padding:25px 0;border-left:0}.reel{height:390px}.contact-box{padding:25px}.stats{justify-content:space-between;gap:20px}.hero h1{letter-spacing:-2px}}
-</style>
+.reel iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:15px;
+}</style>
 </head>
 <body>
 <header class="nav"><div class="container" style="display:flex;width:90%;align-items:center;justify-content:space-between">
@@ -39,8 +44,14 @@ footer{border-top:1px solid #1c211c;padding:28px 0;color:#73796f;font-size:10px}
 </div></section>
 
 <section class="section" id="reel"><div class="container"><div class="section-top"><div><div class="section-kicker">01 / Showreel</div><h2>WATCH MY<br><em>BEST WORK.</em></h2></div><p>Replace this area with your 30–60 second showreel. A strong reel should show your best cuts, motion graphics, sound design and color grading.</p></div>
-<div class="reel"><div class="play">▶</div><div class="reel-label">GYANENDRA <span>/ SHOWREEL</span></div><div class="reel-note">ADD YOUR VIDEO HERE</div></div></div></section>
-
+<div class="reel">
+  <iframe
+    src="https://www.youtube.com/embed/1L1OF53MxJQ"
+    title="Gyanendra Gautam Showreel"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 <section class="section darkgreen" id="work"><div class="container"><div class="section-top"><div><div class="section-kicker">02 / Selected Projects</div><h2>MY <em>WORK.</em></h2></div><p>Your actual work will be placed here category-wise: short videos, long videos, educational edits, posters and banners.</p></div>
 <div class="work-grid">
 <a class="work-card" href="https://youtube.com/shorts/dojfunJILys">
