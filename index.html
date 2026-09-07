@@ -213,6 +213,104 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
     grid-template-columns:1fr !important;
   }
 }
+
+/* ===== PORTFOLIO FILTERS ===== */
+.portfolio-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0 0 35px;
+}
+.filter-btn{
+  appearance:none;
+  border:1px solid rgba(156,255,0,.28);
+  background:rgba(20,45,27,.72);
+  color:#f5f7f2;
+  padding:10px 17px;
+  border-radius:30px;
+  font:inherit;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.filter-btn:hover,
+.filter-btn.active{
+  background:var(--green);
+  color:#0b0d08;
+  border-color:var(--green);
+  transform:translateY(-1px);
+}
+.work-card.is-hidden{
+  display:none !important;
+}
+.design-category.is-hidden{
+  display:none !important;
+}
+.filter-empty{
+  display:none;
+  padding:35px 20px;
+  text-align:center;
+  border:1px dashed rgba(156,255,0,.25);
+  border-radius:14px;
+  color:#c4d0c3;
+  font-size:13px;
+  margin-top:5px;
+}
+.filter-empty.show{
+  display:block;
+}
+
+/* ===== HIRE ME CTA ===== */
+.hire-cta{
+  padding:100px 0;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(156,255,0,.20),transparent 38%),
+    linear-gradient(135deg,#142d1b 0%,#1d4023 55%,#294f20 100%);
+  text-align:center;
+}
+.hire-cta .section-kicker{
+  color:#c4d0c3 !important;
+}
+.hire-cta h2{
+  margin:12px auto 18px;
+  max-width:850px;
+  font-size:clamp(42px,6vw,78px);
+  line-height:.95;
+  letter-spacing:-3px;
+}
+.hire-cta h2 em{
+  color:var(--yellow);
+  font-style:normal;
+}
+.hire-cta p{
+  max-width:600px;
+  margin:0 auto 30px;
+  color:#c4d0c3;
+  font-size:15px;
+  line-height:1.7;
+}
+.hire-cta .btn{
+  padding:15px 25px;
+  font-size:13px;
+}
+@media(max-width:800px){
+  .portfolio-filters{
+    gap:8px;
+  }
+  .filter-btn{
+    padding:9px 13px;
+    font-size:10px;
+  }
+  .hire-cta{
+    padding:75px 0;
+  }
+  .hire-cta h2{
+    letter-spacing:-2px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -252,8 +350,19 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
 </section>
 
 <section class="section darkgreen" id="work"><div class="container"><div class="section-top"><div><div class="section-kicker">02 / Video Projects</div><h2>MY <em>WORK.</em></h2></div><p>A selection of educational, corporate, communication and concept-driven edits created for short-form social content.</p></div>
+
+<div class="portfolio-filters" role="tablist" aria-label="Portfolio categories">
+  <button class="filter-btn active" type="button" data-filter="all">ALL</button>
+  <button class="filter-btn" type="button" data-filter="shorts">SHORTS</button>
+  <button class="filter-btn" type="button" data-filter="long-form">LONG FORM</button>
+  <button class="filter-btn" type="button" data-filter="educational">EDUCATIONAL</button>
+  <button class="filter-btn" type="button" data-filter="corporate">CORPORATE</button>
+  <button class="filter-btn" type="button" data-filter="motion-graphics">MOTION GRAPHICS</button>
+  <button class="filter-btn" type="button" data-filter="posters">POSTERS</button>
+</div>
+
 <div class="work-grid">
-<a class="work-card" href="https://youtube.com/shorts/dojfunJILys" target="_blank" rel="noopener">
+<a class="work-card" data-categories="shorts educational motion-graphics" href="https://youtube.com/shorts/dojfunJILys" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="polygon.png" alt="5 Sec Mein Polygon" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -264,7 +373,7 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
   </div>
 </a>
 
-<a class="work-card" href="https://youtube.com/shorts/v7JHNfEKmMk" target="_blank" rel="noopener">
+<a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/v7JHNfEKmMk" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="polarity.png" alt="Same Shape Opposite Polarity" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -275,7 +384,7 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
   </div>
 </a>
 
-<a class="work-card" href="https://youtube.com/shorts/k0K7cMCulns" target="_blank" rel="noopener">
+<a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/k0K7cMCulns" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="omniscient.png" alt="The Word For I Know Everything" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -286,7 +395,7 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
   </div>
 </a>
 
-<a class="work-card" href="https://youtube.com/shorts/1L1OF53MxJQ" target="_blank" rel="noopener">
+<a class="work-card" data-categories="shorts motion-graphics" href="https://youtube.com/shorts/1L1OF53MxJQ" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="sorry.png" alt="Don't Say Sorry" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -297,7 +406,7 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
   </div>
 </a>
 
-<a class="work-card" href="https://youtube.com/shorts/GTuCWIWJSxQ" target="_blank" rel="noopener">
+<a class="work-card" data-categories="shorts corporate" href="https://youtube.com/shorts/GTuCWIWJSxQ" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="bollywood.png" alt="What If Bollywood Spoke Corporate" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -306,7 +415,7 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
     <p>Corporate Reel • Creative Concept • Video Editing</p>
     <span class="arrow">↗</span>
   </div>
-</a><a class="work-card" href="https://youtube.com/shorts/iv4uqkgd8lo" target="_blank" rel="noopener">
+</a><a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/iv4uqkgd8lo" target="_blank" rel="noopener">
   <div class="thumb" style="background:none;padding:0;overflow:hidden;">
     <img src="Concept.png" alt="Cramming Nahi Concept Samjho" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
@@ -316,9 +425,9 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
     <span class="arrow">↗</span>
   </div>
 </a>
-</div></div></section>
+</div><div class="filter-empty" id="filterEmpty">No projects in this category yet — more work coming soon.</div></div></section>
 
-<section class="section" id="designs">
+<section class="section" id="designs" data-portfolio-posters>
   <div class="container">
     <div class="section-top">
       <div>
@@ -467,5 +576,58 @@ footer{border-top:1px solid #30382d;padding:28px 0;color:#73796f;font-size:10px}
 <form class="form" onsubmit="event.preventDefault();alert('Please connect this form to your preferred form service before publishing.');"><input placeholder="Full Name" required><input type="email" placeholder="Email Address" required><select><option>Select Service</option><option>Short Video Editing</option><option>Long Video Editing</option><option>Educational Video</option><option>Posters & Banners</option></select><input placeholder="Subject"><textarea placeholder="Write Your Message"></textarea><button class="btn" type="submit" style="border:0;cursor:pointer;width:max-content">Send Message ↗</button></form></div></div></section>
 </main>
 
+
+<section class="hire-cta" id="hire">
+  <div class="container">
+    <div class="section-kicker">08 / Hire Me</div>
+    <h2>HAVE A VIDEO<br>TO <em>EDIT?</em></h2>
+    <p>Let's turn your footage into something people want to watch.</p>
+    <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%20have%20a%20video%20editing%20project.%20I%27d%20like%20to%20discuss%20the%20details." target="_blank" rel="noopener">WhatsApp Me ↗</a>
+  </div>
+</section>
+
 <footer><div class="container"><span>© 2026 GAGAN GAUTAM</span><span>VIDEO EDITOR · ADVISUAL STUDIO</span><a href="#home">Back to top ↑</a></div></footer>
+
+<script>
+(function(){
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#work .work-card');
+  const postersSection = document.querySelector('[data-portfolio-posters]');
+  const empty = document.getElementById('filterEmpty');
+
+  function applyFilter(filter){
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+
+    let visible = 0;
+
+    cards.forEach(card => {
+      const categories = (card.dataset.categories || '').split(' ');
+      const show = filter === 'all' || categories.includes(filter);
+      card.classList.toggle('is-hidden', !show);
+      if(show) visible++;
+    });
+
+    if(empty){
+      empty.classList.toggle('show', visible === 0 && filter !== 'posters');
+    }
+
+    if(postersSection){
+      postersSection.classList.toggle('is-hidden', filter !== 'all' && filter !== 'posters');
+    }
+
+    if(filter === 'posters' && postersSection){
+      setTimeout(() => {
+        postersSection.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 80);
+    }
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+  });
+})();
+</script>
+
 </body></html>
