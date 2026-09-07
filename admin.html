@@ -37,7 +37,12 @@ button:disabled{opacity:.6;cursor:not-allowed}
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
 const firebaseConfig = {'apiKey': 'AIzaSyC6LlAjmG6LPTYXZXc0v2cAmK1jL9xRJw', 'authDomain': 'advisual-studio-admin.firebaseapp.com', 'projectId': 'advisual-studio-admin', 'storageBucket': 'advisual-studio-admin.firebasestorage.app', 'messagingSenderId': '883242532024', 'appId': '1:883242532024:web:896cda30f0401c8ac5884d', 'measurementId': 'G-6XH4DTWZJD'};
 const app = initializeApp(firebaseConfig);
@@ -57,6 +62,13 @@ onAuthStateChanged(auth, user => {
   if (user) window.location.href = "admin-dashboard.html";
 });
 
+email.addEventListener("keydown", e => {
+  if (e.key === "Enter") loginBtn.click();
+});
+password.addEventListener("keydown", e => {
+  if (e.key === "Enter") loginBtn.click();
+});
+
 loginBtn.addEventListener("click", async () => {
   const e = email.value.trim();
   const p = password.value;
@@ -70,8 +82,17 @@ loginBtn.addEventListener("click", async () => {
     loginBtn.disabled = false;
     console.error("Firebase login error:", err);
     const code = err?.code || "unknown-error";
-    const detail = code.replace("auth/", "");
-    show("Firebase error: " + detail);
+    const messages = {
+      "auth/invalid-api-key": "Firebase API key invalid hai. Firebase config dobara check karo.",
+      "auth/api-key-not-valid": "Firebase API key valid nahi hai. Firebase Console ki exact Web App config use karo.",
+      "auth/invalid-credential": "Email ya password galat hai.",
+      "auth/invalid-email": "Email address sahi format mein nahi hai.",
+      "auth/user-not-found": "Is email ka Admin user Firebase mein nahi mila.",
+      "auth/wrong-password": "Password galat hai.",
+      "auth/too-many-requests": "Bahut attempts ho gaye. Thodi der baad try karo.",
+      "auth/network-request-failed": "Internet/network problem. Dobara try karo."
+    };
+    show(messages[code] || ("Firebase error: " + code));
   }
 });
 
