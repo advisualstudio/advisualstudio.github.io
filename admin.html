@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Advisual Studio</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;background:#07100b;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:430px;background:#0d1711;border:1px solid #263c2b;border-radius:24px;padding:34px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.logo{text-align:center;margin-bottom:26px} .logo img{max-width:145px;max-height:70px;object-fit:contain}
+h1{font-size:30px;margin:0 0 8px;text-align:center} .sub{text-align:center;color:#9caf9f;margin:0 0 28px}
+label{display:block;font-size:14px;font-weight:700;margin:16px 0 8px} input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid #36523c;background:#08100b;color:#fff;font-size:16px;outline:none} input:focus{border-color:#b8ff35}
+button{width:100%;border:0;border-radius:12px;padding:14px 16px;margin-top:20px;background:#b8ff35;color:#081008;font-size:16px;font-weight:800;cursor:pointer}
+button:disabled{opacity:.6;cursor:not-allowed}
+.forgot{display:block;text-align:center;margin-top:17px;color:#b8ff35;text-decoration:none;cursor:pointer;font-size:14px}
+.msg{min-height:22px;margin-top:17px;text-align:center;font-size:14px;color:#c9d8ca}
+.back{display:block;text-align:center;margin-top:22px;color:#9caf9f;text-decoration:none;font-size:13px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo"><img src="Logo.png" alt="Advisual Studio"></div>
+  <h1>Admin Login</h1>
+  <p class="sub">Advisual Studio Portfolio</p>
+
+  <label for="email">Admin Email</label>
+  <input id="email" type="email" autocomplete="username" placeholder="Enter admin Gmail">
+
+  <label for="password">Password</label>
+  <input id="password" type="password" autocomplete="current-password" placeholder="Enter password">
+
+  <button id="loginBtn">Login</button>
+  <a class="forgot" id="forgotBtn">Forgot Password?</a>
+  <div class="msg" id="msg"></div>
+  <a class="back" href="index.html">← Back to Portfolio</a>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+const firebaseConfig = {'apiKey': 'AIzaSyC6LlAjmG6LPTYXZXc0v2cAmK1jL9xRJw', 'authDomain': 'advisual-studio-admin.firebaseapp.com', 'projectId': 'advisual-studio-admin', 'storageBucket': 'advisual-studio-admin.firebasestorage.app', 'messagingSenderId': '883242532024', 'appId': '1:883242532024:web:896cda30f0401c8ac5884d', 'measurementId': 'G-6XH4DTWZJD'};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const msg = document.getElementById("msg");
+const loginBtn = document.getElementById("loginBtn");
+
+function show(text, ok=false) {
+  msg.textContent = text;
+  msg.style.color = ok ? "#b8ff35" : "#ff9b9b";
+}
+
+onAuthStateChanged(auth, user => {
+  if (user) window.location.href = "admin-dashboard.html";
+});
+
+loginBtn.addEventListener("click", async () => {
+  const e = email.value.trim();
+  const p = password.value;
+  if (!e || !p) return show("Email aur password dono enter karo.");
+  loginBtn.disabled = true;
+  show("Logging in...", true);
+  try {
+    await signInWithEmailAndPassword(auth, e, p);
+    window.location.href = "admin-dashboard.html";
+  } catch (err) {
+    loginBtn.disabled = false;
+    show("Login failed. Email ya password check karo.");
+  }
+});
+
+document.getElementById("forgotBtn").addEventListener("click", async () => {
+  const e = email.value.trim();
+  if (!e) return show("Pehle Admin Email enter karo.");
+  try {
+    await sendPasswordResetEmail(auth, e);
+    show("Password reset link tumhari Gmail par bhej diya gaya hai.", true);
+  } catch (err) {
+    show("Reset email nahi bhej paaya. Email check karo.");
+  }
+});
+</script>
+</body>
+</html>
