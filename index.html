@@ -39,7 +39,8 @@ button,input,textarea,select{font:inherit}
   border-bottom:1px solid rgba(255,255,255,.05)
 }
 .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:800;letter-spacing:-1px}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center}
+.logo img{height:58px;width:auto;max-width:155px;object-fit:contain}
 .logo b{color:var(--green)}
 .nav-links{display:flex;gap:25px;font-size:12px;color:#cbd0c8}
 .nav-links a{transition:.2s}
@@ -350,6 +351,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   .design-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
+  .logo img{height:50px;max-width:140px}
   .section{padding:75px 0}
   h2{letter-spacing:-2px}
   .hero{padding-top:50px}
@@ -478,7 +480,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="logo" href="#home">GAGAN<span><b>.</b></span></a>
+    <a class="logo" href="#home" aria-label="Advisual Studio"><img src="Logo.png" alt="Advisual Studio"></a>
     <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -725,8 +727,8 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
     <div class="design-category" id="posterCategory">
       <div class="design-title"><div class="section-kicker">POSTERS / 1080 × 1280</div></div>
       <div class="design-grid">
-        <div class="design-card"><img src="poster1.png" alt="Poster Design 1"></div>
-        <div class="design-card"><img src="poster2.png" alt="Poster Design 2"></div>
+        <div class="design-card"><img src="poster1.jpg" alt="Poster Design 1"></div>
+        <div class="design-card"><img src="poster2.jpg" alt="Poster Design 2"></div>
         <div class="design-card"><img src="poster3.png" alt="Poster Design 3"></div>
         <div class="design-card"><img src="poster4.png" alt="Poster Design 4"></div>
         <div class="design-card"><img src="poster5.png" alt="Poster Design 5"></div>
