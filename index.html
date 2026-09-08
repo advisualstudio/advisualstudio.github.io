@@ -1001,6 +1001,49 @@ body{
   }
 }
 
+
+/* FINAL HERO VIEW — large portrait, top visible, bottom anchored */
+.hero{overflow:hidden;min-height:100vh}
+.hero-grid{min-height:calc(100vh - 86px);align-items:stretch}
+.hero-center{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:calc(100vh - 86px);overflow:visible}
+.hero-center .hero-photo{
+  width:min(620px,46vw)!important;
+  height:calc(100vh - 86px)!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  align-self:flex-end!important;
+  margin:0 auto!important;
+  border-radius:0!important;
+  filter:drop-shadow(0 24px 38px rgba(0,0,0,.28))!important;
+  z-index:3!important;
+}
+.hero-center::before{
+  content:"";
+  position:absolute;
+  width:min(560px,38vw);
+  height:min(560px,38vw);
+  border:1px solid rgba(156,255,0,.20);
+  border-radius:50%;
+  left:50%;top:50%;
+  transform:translate(-50%,-42%);
+  z-index:1;
+}
+@media (max-width:1000px){
+  .hero-center .hero-photo{
+    width:min(520px,52vw)!important;
+    height:calc(100vh - 80px)!important;
+  }
+}
+@media (max-width:760px){
+  .hero-grid{min-height:auto}
+  .hero-center{min-height:520px}
+  .hero-center .hero-photo{
+    width:min(520px,92vw)!important;
+    height:520px!important;
+  }
+}
+
 </style>
 </head>
 
