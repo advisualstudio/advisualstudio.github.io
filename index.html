@@ -107,13 +107,11 @@ h2 em{font-style:normal;color:var(--yellow)}
 .hero-actions{display:flex;gap:11px;margin-top:27px;flex-wrap:wrap}
 .hero-center{position:relative;min-height:520px;display:flex;align-items:end;justify-content:center}
 .hero-photo{
-  width:min(390px,100%);height:520px;
-  object-fit:cover;object-position:center top;
-  border-radius:220px 220px 0 0;
-  filter:saturate(.95);
+  width:min(460px,100%);height:520px;
+  object-fit:contain;object-position:center bottom;
+  border-radius:0;
+  filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24));
   position:relative;z-index:2;
-  -webkit-mask-image:linear-gradient(to bottom,#000 90%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 90%,transparent 100%)
 }
 .hero-ring{
   position:absolute;border:2px solid var(--green);border-radius:50%;
@@ -339,7 +337,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   .hero-copy p{margin-left:auto;margin-right:auto}
   .hero-actions{justify-content:center}
   .hero-center{order:-1;min-height:430px}
-  .hero-photo{height:430px;width:330px}
+  .hero-photo{height:430px;width:430px;object-fit:contain;border-radius:0}
   .specialized{max-width:600px;margin:auto;text-align:center}
   .socials{justify-content:center;margin-top:25px}
   .section-top{display:block}
@@ -357,7 +355,7 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   .hero{padding-top:50px}
   .hero-copy h1{letter-spacing:-3px}
   .hero-center{min-height:360px}
-  .hero-photo{height:360px;width:280px}
+  .hero-photo{height:360px;width:360px;object-fit:contain;border-radius:0}
   .hero-ring{top:35px}
   .hero-dot{top:125px}
   .work-grid,.reel-grid,.skill-grid{grid-template-columns:1fr}
@@ -990,7 +988,7 @@ body{
       <div class="hero-orbit"></div>
       <div class="hero-ring"></div>
       <div class="hero-dot"></div>
-      <img class="hero-photo" src="profile.jpg" alt="Gagan Gautam — Video Editor">
+      <img class="hero-photo" src="profile-premium.png" alt="Gagan Gautam — Video Editor">
     </div>
 
     <div class="specialized">
