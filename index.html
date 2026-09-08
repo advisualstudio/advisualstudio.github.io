@@ -1125,6 +1125,118 @@ body{
 }
 
 </style>
+
+<style id="hero-reference-match">
+/* ===== HERO: MATCH THE SUPPLIED REFERENCE PREVIEW ===== */
+.hero{
+  min-height:700px;
+  height:700px;
+  padding:35px 0 0;
+  overflow:hidden;
+}
+.hero-grid{
+  height:630px;
+  display:grid;
+  grid-template-columns:1fr .95fr 1fr;
+  align-items:center;
+  gap:34px;
+}
+.hero-copy{
+  align-self:center;
+  padding-top:5px;
+}
+.hero-copy h1{
+  font-size:clamp(58px,6.2vw,88px);
+  line-height:.88;
+  letter-spacing:-4px;
+  margin:18px 0;
+}
+.hero-center{
+  position:relative;
+  min-height:630px;
+  height:630px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+}
+.hero-photo{
+  width:min(500px,100%);
+  height:600px;
+  object-fit:contain;
+  object-position:center center;
+  border-radius:0;
+  filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24));
+  position:relative;
+  z-index:2;
+}
+.hero-orbit{
+  width:430px;
+  height:430px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:1;
+}
+.hero-ring{
+  right:5%;
+  top:75px;
+  z-index:3;
+}
+.hero-dot{
+  right:12%;
+  top:205px;
+  z-index:3;
+}
+.specialized{
+  align-self:center;
+  padding:0;
+}
+.specialized .socials{
+  margin-top:42px;
+}
+
+/* Keep the exact portrait positioning on smaller screens without breaking
+   the existing responsive layout. */
+@media (max-width: 900px){
+  .hero{
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    padding:60px 0;
+  }
+  .hero-grid{
+    height:auto;
+  }
+  .hero-center{
+    min-height:540px;
+    height:540px;
+  }
+  .hero-photo{
+    width:min(430px,100%);
+    height:520px;
+  }
+  .hero-orbit{
+    width:340px;
+    height:340px;
+  }
+}
+@media (max-width: 600px){
+  .hero-center{
+    min-height:450px;
+    height:450px;
+  }
+  .hero-photo{
+    width:340px;
+    height:430px;
+  }
+  .hero-orbit{
+    width:280px;
+    height:280px;
+  }
+}
+</style>
+
 </head>
 
 <body>
