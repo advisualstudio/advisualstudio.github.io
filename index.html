@@ -1126,336 +1126,100 @@ body{
 
 </style>
 
-<style id="hero-reference-match">
-/* ===== HERO: MATCH THE SUPPLIED REFERENCE PREVIEW ===== */
-.hero{
-  min-height:700px;
-  height:700px;
-  padding:35px 0 0;
-  overflow:hidden;
-}
-.hero-grid{
-  height:630px;
-  display:grid;
-  grid-template-columns:1fr .95fr 1fr;
-  align-items:center;
-  gap:34px;
-}
-.hero-copy{
-  align-self:center;
-  padding-top:5px;
-}
-.hero-copy h1{
-  font-size:clamp(58px,6.2vw,88px);
-  line-height:.88;
-  letter-spacing:-4px;
-  margin:18px 0;
-}
-.hero-center{
-  position:relative;
-  min-height:630px;
-  height:630px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0;
-}
-.hero-photo{
-  width:min(500px,100%);
-  height:600px;
-  object-fit:contain;
-  object-position:center center;
-  border-radius:0;
-  filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24));
-  position:relative;
-  z-index:2;
-}
-.hero-orbit{
-  width:430px;
-  height:430px;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:1;
-}
-.hero-ring{
-  right:5%;
-  top:75px;
-  z-index:3;
-}
-.hero-dot{
-  right:12%;
-  top:205px;
-  z-index:3;
-}
-.specialized{
-  align-self:center;
-  padding:0;
-}
-.specialized .socials{
-  margin-top:42px;
-}
 
-/* Keep the exact portrait positioning on smaller screens without breaking
-   the existing responsive layout. */
-@media (max-width: 900px){
-  .hero{
-    height:auto;
-    min-height:0;
-    overflow:visible;
-    padding:60px 0;
-  }
-  .hero-grid{
-    height:auto;
-  }
-  .hero-center{
-    min-height:540px;
-    height:540px;
-  }
-  .hero-photo{
-    width:min(430px,100%);
-    height:520px;
-  }
-  .hero-orbit{
-    width:340px;
-    height:340px;
-  }
-}
-@media (max-width: 600px){
-  .hero-center{
-    min-height:450px;
-    height:450px;
-  }
-  .hero-photo{
-    width:340px;
-    height:430px;
-  }
-  .hero-orbit{
-    width:280px;
-    height:280px;
-  }
-}
-</style>
-
-\n<style id="hero-photo-final-position">\n@media (min-width:901px){\n  .hero{position:relative;height:700px;min-height:700px;overflow:hidden;}\n  .hero-grid{position:relative;height:630px;}\n  .hero-center{position:static;min-height:0;height:0;padding:0;}\n  .hero-photo{position:absolute;z-index:5;top:0;left:50%;transform:translateX(-50%);width:620px;height:700px;max-width:none;object-fit:contain;object-position:center top;margin:0;}\n  .hero-orbit{position:absolute;z-index:1;width:430px;height:430px;top:50%;left:50%;transform:translate(-50%,-50%);}\n  .hero-ring{position:absolute;z-index:6;right:5%;top:75px;}\n  .hero-dot{position:absolute;z-index:6;right:12%;top:205px;}\n}\n</style>\n
-
-<style id="hero-exact-reference">
-/* ===== FINAL HERO HEIGHT / POSITION — MATCH REFERENCE ===== */
-.hero{
-  height:calc(100vh - 78px);
-  min-height:700px;
-  padding:35px 0 0;
-  overflow:hidden;
-}
-.hero-grid{
-  height:650px;
-  display:grid;
-  grid-template-columns:1fr .95fr 1fr;
-  align-items:center;
-  gap:34px;
-}
-.hero-center{
-  position:relative;
-  height:650px;
-  min-height:650px;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  padding-top:0;
-}
-.hero-photo{
-  width:min(560px,100%);
-  height:650px;
-  object-fit:contain;
-  object-position:center top;
-  position:relative;
-  z-index:2;
-}
-.hero-orbit{
-  top:120px;
-}
-.hero-ring{
-  top:70px;
-}
-.hero-dot{
-  top:185px;
-}
-
-/* Do not let the following sections move up beside the hero. */
-.marquee,
-#work,
-.work-section{
-  position:relative;
-  z-index:5;
-}
-
-@media (max-width:900px){
-  .hero{
-    height:auto;
-    min-height:0;
-    padding:60px 0;
-    overflow:visible;
-  }
-  .hero-grid{
-    height:auto;
-  }
-  .hero-center{
-    height:540px;
-    min-height:540px;
-  }
-  .hero-photo{
-    width:min(430px,100%);
-    height:520px;
-  }
-}
-</style>
-
-
-<style id="hero-photo-final-exact">
+<style id="FINAL-TRUE-REFERENCE-HERO">
+/* FINAL CLEAN HERO — one desktop layout, no competing positioning rules */
 @media (min-width:901px){
   .hero{
-    height:calc(100vh - 78px) !important;
-    min-height:750px !important;
+    position:relative !important;
+    height:calc(100vh - 74px) !important;
+    min-height:760px !important;
     padding:0 !important;
     overflow:hidden !important;
-    position:relative !important;
   }
   .hero-grid{
-    height:100% !important;
     position:relative !important;
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
     display:grid !important;
     grid-template-columns:1fr 1fr 1fr !important;
-    align-items:stretch !important;
+    align-items:center !important;
     gap:28px !important;
   }
   .hero-copy,
   .specialized{
     position:relative !important;
-    z-index:8 !important;
-    align-self:center !important;
-  }
-  .hero-center{
-    position:static !important;
-    min-height:0 !important;
-    height:0 !important;
-    padding:0 !important;
-  }
-  .hero-photo{
-    position:absolute !important;
-    z-index:5 !important;
-    left:50% !important;
-    top:-25px !important;
-    transform:translateX(-50%) !important;
-    width:auto !important;
-    height:710px !important;
-    max-width:none !important;
-    object-fit:contain !important;
-    object-position:center top !important;
-    margin:0 !important;
-  }
-  .hero-orbit{
-    position:absolute !important;
-    z-index:1 !important;
-    left:50% !important;
-    top:90px !important;
-    transform:translateX(-50%) !important;
-    width:430px !important;
-    height:430px !important;
-  }
-  .hero-ring{z-index:6 !important; top:170px !important;}
-  .hero-dot{z-index:6 !important; top:300px !important;}
-}
-</style>
-
-<style id="hero-reference-final">
-/* FINAL HERO POSITION — portrait stays inside the center area, aligned from the top */
-.hero{position:relative;min-height:calc(100vh - 74px);height:calc(100vh - 74px);padding:0;overflow:hidden}
-.hero-grid{position:relative;width:100%;height:100%;min-height:0;display:grid;grid-template-columns:1fr .95fr 1fr;align-items:center;gap:34px}
-.hero-copy{position:relative;z-index:5;align-self:center}
-.hero-center{position:absolute;left:31%;top:0;width:38%;height:100%;min-height:0;padding:0;display:block;z-index:2;pointer-events:none}
-.hero-photo{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(610px,100%);height:720px;max-height:100%;object-fit:contain;object-position:center top;border-radius:0;filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24));z-index:2}
-.hero-orbit{width:390px;height:390px;top:115px;left:50%;transform:translateX(-50%);z-index:1}
-.hero-ring{right:2%;top:110px;z-index:4}
-.hero-dot{right:8%;top:225px;z-index:4}
-.specialized{position:relative;z-index:5;align-self:center}
-@media (max-width:1100px){
- .hero{height:auto;min-height:calc(100vh - 70px);overflow:hidden}
- .hero-grid{height:760px;grid-template-columns:1fr 1fr 1fr}
- .hero-center{left:28%;width:44%;height:760px}
- .hero-photo{height:690px}
-}
-@media (max-width:900px){
- .hero{height:auto;min-height:0;overflow:visible;padding:60px 0}
- .hero-grid{height:auto;display:grid;grid-template-columns:1fr;gap:25px}
- .hero-center{position:relative;left:auto;top:auto;width:100%;height:560px;min-height:560px;order:2;display:flex;align-items:flex-start;justify-content:center}
- .hero-photo{position:relative;left:auto;top:auto;transform:none;width:min(430px,100%);height:540px;max-height:none}
- .hero-copy{order:1}.specialized{order:3}
-}
-</style>
-
-
-<style id="FINAL-CLEAN-HERO-SIZE">
-@media (min-width:901px){
-  .hero{
-    position:relative !important;
-    height:calc(100vh - 74px) !important;
-    min-height:700px !important;
-    padding:0 !important;
-    overflow:hidden !important;
-  }
-  .hero-grid{
-    position:relative !important;
-    height:100% !important;
-    display:grid !important;
-    grid-template-columns:1fr .95fr 1fr !important;
-    align-items:center !important;
-    gap:34px !important;
-  }
-  .hero-copy,.specialized{
-    position:relative !important;
     z-index:10 !important;
     align-self:center !important;
+    transform:none !important;
   }
   .hero-center{
-    position:absolute !important;
-    left:31% !important;
-    top:0 !important;
-    width:38% !important;
+    position:relative !important;
+    z-index:3 !important;
+    width:auto !important;
     height:100% !important;
     min-height:0 !important;
     padding:0 !important;
-    display:block !important;
-    z-index:2 !important;
-    pointer-events:none !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    transform:none !important;
   }
   .hero-photo{
-    position:absolute !important;
-    left:50% !important;
-    top:35px !important;
-    transform:translateX(-50%) !important;
+    position:relative !important;
+    z-index:4 !important;
+    display:block !important;
     width:auto !important;
-    height:610px !important;
-    max-width:none !important;
+    height:690px !important;
+    max-width:100% !important;
     max-height:none !important;
     object-fit:contain !important;
     object-position:center top !important;
     margin:0 !important;
-    z-index:5 !important;
+    transform:none !important;
   }
   .hero-orbit{
     position:absolute !important;
-    left:50% !important;
-    top:115px !important;
-    transform:translateX(-50%) !important;
-    width:390px !important;
-    height:390px !important;
     z-index:1 !important;
+    width:430px !important;
+    height:430px !important;
+    left:50% !important;
+    top:120px !important;
+    transform:translateX(-50%) !important;
   }
-  .hero-ring{z-index:6 !important;top:110px !important;}
-  .hero-dot{z-index:6 !important;top:225px !important;}
+  .hero-ring{
+    position:absolute !important;
+    z-index:6 !important;
+    right:4% !important;
+    top:115px !important;
+  }
+  .hero-dot{
+    position:absolute !important;
+    z-index:6 !important;
+    right:10% !important;
+    top:245px !important;
+  }
+  .specialized{
+    padding:0 !important;
+  }
+  .specialized .socials{
+    margin-top:38px !important;
+  }
+}
+
+@media (min-width:901px) and (max-height:820px){
+  .hero{min-height:720px !important;}
+  .hero-photo{height:650px !important;}
+  .hero-orbit{top:105px !important;width:400px !important;height:400px !important;}
+}
+
+@media (max-width:900px){
+  .hero{overflow:visible !important;}
+  .hero-center{transform:none !important;}
+  .hero-photo{transform:none !important;}
 }
 </style>
-
 </head>
 
 <body>
