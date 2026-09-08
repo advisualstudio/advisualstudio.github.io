@@ -874,6 +874,82 @@ body{
   .footer-socials.contact-icon-row .contact-icon{width:49px;height:49px}
 }
 
+
+/* Hero contact icons: Call → WhatsApp → Email → Instagram */
+.hero-contact-icons{
+  display:flex!important;
+  justify-content:flex-start!important;
+  align-items:center;
+  gap:14px!important;
+  margin-top:25px!important;
+}
+.hero-contact-icons a{
+  width:52px!important;
+  height:52px!important;
+  min-width:52px;
+  border-radius:50%;
+  display:grid!important;
+  place-items:center;
+  padding:0!important;
+  border:0!important;
+  color:#fff!important;
+  font-size:0!important;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,filter .35s ease!important;
+}
+.hero-contact-icons a:hover{
+  transform:translateY(-5px) scale(1.08)!important;
+  filter:brightness(1.08);
+}
+.hero-contact-icons a::after{
+  content:"";
+  position:absolute;
+  top:-70%;
+  left:-45%;
+  width:30%;
+  height:240%;
+  background:rgba(255,255,255,.20);
+  transform:rotate(22deg) translateX(-250%);
+  transition:transform .65s ease;
+  pointer-events:none;
+}
+.hero-contact-icons a:hover::after{
+  transform:rotate(22deg) translateX(650%);
+}
+.hero-contact-icons svg{
+  width:27px;
+  height:27px;
+  fill:none;
+  stroke:#fff;
+  stroke-width:2;
+  position:relative;
+  z-index:1;
+}
+.hero-contact-icons .call-icon{
+  background:#ffc400!important;
+  box-shadow:0 8px 28px rgba(255,196,0,.28);
+}
+.hero-contact-icons .whatsapp-icon{
+  background:#20d366!important;
+  box-shadow:0 8px 28px rgba(32,211,102,.24);
+}
+.hero-contact-icons .email-icon{
+  background:#168bf5!important;
+  box-shadow:0 8px 28px rgba(22,139,245,.24);
+}
+.hero-contact-icons .instagram-icon{
+  background:linear-gradient(135deg,#7b2cff 0%,#e91e63 45%,#ff9a00 100%)!important;
+  box-shadow:0 8px 28px rgba(225,48,108,.25);
+}
+.hero-contact-icons .instagram-icon svg circle:last-child{
+  fill:#fff;
+}
+@media(max-width:600px){
+  .hero-contact-icons{gap:11px!important}
+  .hero-contact-icons a{width:49px!important;height:49px!important;min-width:49px}
+}
+
 </style>
 </head>
 
@@ -922,10 +998,38 @@ body{
       <h3>Creating visual content that keeps people watching.</h3>
       <p>Short-form editing, educational storytelling, corporate communication, motion graphics, color grading and social-first creative design.</p>
       <div style="margin-top:22px;font-size:12px;font-weight:700">4+ Years of Editing Experience ↗</div>
-      <div class="socials">
-        <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">IG</a>
-        <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA</a>
-        <a href="mailto:advisualstudiodesign@gmail.com">✉</a>
+      <div class="socials hero-contact-icons" aria-label="Contact links">
+        <!-- Call: number hidden, click opens phone dialer -->
+        <a class="call-icon" href="tel:+917827610998" aria-label="Call" title="Call">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.2 3.5 9.7 3c.6-.1 1.1.2 1.3.8l1.1 3.1c.2.5 0 .9-.4 1.2L10 9.2c1 2 2.5 3.5 4.5 4.5l1.1-1.7c.3-.4.7-.6 1.2-.4l3.1 1.1c.6.2.9.7.8 1.3l-.5 2.5c-.1.7-.7 1.2-1.4 1.2C11.8 17.7 6.3 12.2 6.3 5c0-.7.5-1.3 1.2-1.5Z"></path>
+          </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a class="whatsapp-icon" href="https://wa.me/919369847401" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.2 11.5a8.1 8.1 0 0 1-12 7.1L3.5 20l1.5-4.5A8.1 8.1 0 1 1 20.2 11.5Z"></path>
+            <path d="M8.5 8.2c.3-.5.6-.5 1-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c.7 1.2 1.6 2 2.8 2.6l.7-.7c.2-.2.4-.2.7-.1l1.7.8c.3.1.4.3.4.5v.5c0 .4-.1.7-.5 1-.4.3-1 .5-1.5.4-1.6-.2-3.2-1.2-4.6-2.5-1.4-1.3-2.4-2.9-2.7-4.5-.1-.5.1-1.1.4-1.5Z"></path>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a class="email-icon" href="mailto:advisualstudiodesign@gmail.com" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="instagram-icon" href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
+            <circle cx="12" cy="12" r="4.1"></circle>
+            <circle cx="17.6" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
       </div>
     </div>
 
