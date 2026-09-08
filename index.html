@@ -1310,6 +1310,63 @@ body{
 }
 </style>
 
+
+<style id="hero-photo-final-exact">
+@media (min-width:901px){
+  .hero{
+    height:calc(100vh - 78px) !important;
+    min-height:750px !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    position:relative !important;
+  }
+  .hero-grid{
+    height:100% !important;
+    position:relative !important;
+    display:grid !important;
+    grid-template-columns:1fr 1fr 1fr !important;
+    align-items:stretch !important;
+    gap:28px !important;
+  }
+  .hero-copy,
+  .specialized{
+    position:relative !important;
+    z-index:8 !important;
+    align-self:center !important;
+  }
+  .hero-center{
+    position:static !important;
+    min-height:0 !important;
+    height:0 !important;
+    padding:0 !important;
+  }
+  .hero-photo{
+    position:absolute !important;
+    z-index:5 !important;
+    left:50% !important;
+    top:-25px !important;
+    transform:translateX(-50%) !important;
+    width:auto !important;
+    height:710px !important;
+    max-width:none !important;
+    object-fit:contain !important;
+    object-position:center top !important;
+    margin:0 !important;
+  }
+  .hero-orbit{
+    position:absolute !important;
+    z-index:1 !important;
+    left:50% !important;
+    top:90px !important;
+    transform:translateX(-50%) !important;
+    width:430px !important;
+    height:430px !important;
+  }
+  .hero-ring{z-index:6 !important; top:170px !important;}
+  .hero-dot{z-index:6 !important; top:300px !important;}
+}
+</style>
+
 </head>
 
 <body>
