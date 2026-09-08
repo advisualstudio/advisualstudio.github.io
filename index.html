@@ -946,6 +946,61 @@ body{
   .hero-contact-icons a{width:49px!important;height:49px!important;min-width:49px}
 }
 
+
+/* ===== FINAL HERO PORTRAIT POSITION =====
+   Exact supplied transparent photo. Large, top-visible, bottom-anchored.
+*/
+.hero-center{
+  position:relative!important;
+  min-height:690px!important;
+  height:690px!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+.hero-photo{
+  width:min(640px,118%)!important;
+  height:760px!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  align-self:flex-end!important;
+  margin:0!important;
+  border-radius:0!important;
+  filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24))!important;
+}
+.hero-orbit{
+  width:410px!important;
+  height:410px!important;
+  top:145px!important;
+  left:50%!important;
+}
+.hero-ring{top:55px!important}
+.hero-dot{top:175px!important}
+
+@media(max-width:900px){
+  .hero-center{
+    min-height:620px!important;
+    height:620px!important;
+  }
+  .hero-photo{
+    width:min(590px,125%)!important;
+    height:690px!important;
+  }
+}
+@media(max-width:600px){
+  .hero-center{
+    min-height:500px!important;
+    height:500px!important;
+  }
+  .hero-photo{
+    width:min(500px,135%)!important;
+    height:570px!important;
+  }
+}
+
 </style>
 </head>
 
