@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gagan Gautam | Video Editor</title>
+<meta name="description" content="Gagan Gautam — Video Editor portfolio for short-form, long-form, educational, corporate and motion graphics content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070907;
+  --bg2:#0d120b;
+  --card:#151d11;
+  --card2:#1d2917;
+  --line:rgba(156,255,0,.16);
+  --white:#f6f7f2;
+  --muted:#aab2a2;
+  --green:#9cff00;
+  --yellow:#ffc400;
+  --dark:#0a0d08;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Outfit,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;
+  height:78px;
+  background:rgba(7,9,7,.84);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.05)
+}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center}
+.logo img{height:58px;width:auto;max-width:155px;object-fit:contain}
+.logo b{color:var(--green)}
+.nav-links{display:flex;gap:25px;font-size:12px;color:#cbd0c8}
+.nav-links a{transition:.2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:#0b0d08;padding:11px 18px;border-radius:30px;font-size:12px;font-weight:800}
+
+/* COMMON */
+.eyebrow,.section-kicker{
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  font-size:10px;
+  color:#c2c9bb
+}
+.eyebrow i{
+  display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--green);margin-right:8px
+}
+.section{padding:105px 0;position:relative}
+.section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 85% 40%,rgba(156,255,0,.07),transparent 32%)
+}
+.section>*{position:relative;z-index:1}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:45px;margin-bottom:45px}
+.section-top>div{flex:1}
+.section-top>p{max-width:390px;color:var(--muted);font-size:13px;line-height:1.75;margin:0}
+h2{font-size:clamp(42px,5.4vw,70px);line-height:.94;letter-spacing:-3px;margin:13px 0 0}
+h2 em{font-style:normal;color:var(--yellow)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--green);color:#0a0d08;
+  padding:13px 21px;border-radius:30px;
+  font-size:12px;font-weight:800;
+  transition:.25s;box-shadow:0 0 0 rgba(156,255,0,0)
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(156,255,0,.18)}
+.outline{
+  display:inline-flex;align-items:center;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:30px;padding:12px 20px;font-size:12px;
+  transition:.2s
+}
+.outline:hover{border-color:var(--green);color:var(--green)}
+
+/* HERO */
+.hero{
+  min-height:650px;padding:75px 0 70px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(156,255,0,.09),transparent 22%),
+    radial-gradient(circle at 15% 45%,rgba(156,255,0,.08),transparent 30%),
+    linear-gradient(135deg,#0b1009,#10190c 55%,#080b08)
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr .95fr 1fr;
+  align-items:center;gap:34px
+}
+.hero-copy h1{
+  font-size:clamp(54px,6.5vw,88px);
+  line-height:.88;letter-spacing:-4px;margin:18px 0
+}
+.hero-copy h1 span{display:block}
+.hero-copy h1 .yellow{color:var(--yellow)}
+.hero-copy p{max-width:430px;color:var(--muted);font-size:13px;line-height:1.75}
+.hero-actions{display:flex;gap:11px;margin-top:27px;flex-wrap:wrap}
+.hero-center{position:relative;min-height:520px;display:flex;align-items:end;justify-content:center}
+.hero-photo{
+  width:min(390px,100%);height:520px;
+  object-fit:cover;object-position:center top;
+  border-radius:220px 220px 0 0;
+  filter:saturate(.95);
+  position:relative;z-index:2;
+  -webkit-mask-image:linear-gradient(to bottom,#000 90%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 90%,transparent 100%)
+}
+.hero-ring{
+  position:absolute;border:2px solid var(--green);border-radius:50%;
+  width:90px;height:90px;right:3%;top:70px;opacity:.9
+}
+.hero-ring::after{
+  content:"";position:absolute;border:2px solid var(--yellow);
+  width:30px;height:30px;border-radius:50%;right:-18px;top:-9px
+}
+.hero-dot{
+  position:absolute;width:34px;height:34px;border-radius:50%;
+  background:var(--yellow);right:10%;top:185px
+}
+.hero-orbit{
+  position:absolute;width:300px;height:300px;border:1px solid rgba(156,255,0,.14);
+  border-radius:50%;top:120px;left:50%;transform:translateX(-50%)
+}
+.specialized{padding:20px 0 0}
+.specialized .mini{color:#cbd0c8;font-size:11px;margin-bottom:19px}
+.specialized .mini::before{content:"⌑";color:var(--green);margin-right:8px}
+.specialized h3{font-size:19px;line-height:1.25;margin:0 0 12px}
+.specialized p{color:var(--muted);font-size:12px;line-height:1.7}
+.socials{display:flex;gap:7px;margin-top:48px}
+.socials a{
+  width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;background:var(--green);color:#0a0d08;
+  font-size:10px;font-weight:800;transition:.2s
+}
+.socials a:hover{transform:translateY(-3px);background:var(--yellow)}
+
+/* MARQUEE */
+.marquee{
+  overflow:hidden;background:#11180d;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:17px 0;white-space:nowrap
+}
+.marquee-track{display:inline-flex;gap:45px;min-width:max-content;animation:marquee 24s linear infinite}
+.marquee span{font-size:16px;letter-spacing:.05em;color:var(--green);font-weight:700}
+.marquee span::before{content:"✦";margin-right:25px;color:var(--yellow)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about{background:linear-gradient(180deg,#080a08,#10160d)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-photo{
+  position:relative;padding:11px;background:#11170e;border:1px solid var(--line);
+  border-radius:15px
+}
+.about-photo img{width:100%;aspect-ratio:1/1.05;object-fit:cover;border-radius:9px}
+.about-photo .number{
+  position:absolute;left:-18px;bottom:20px;background:var(--green);color:#0a0d08;
+  padding:18px 22px;font-size:30px;font-weight:800;border-radius:10px
+}
+.about-copy .lead{font-size:25px;line-height:1.25;margin:0 0 20px}
+.about-copy p{font-size:13px;line-height:1.8;color:var(--muted)}
+.info-box{
+  margin-top:25px;padding:22px;border-radius:13px;
+  background:rgba(29,41,23,.72);border:1px solid var(--line);
+  display:grid;grid-template-columns:1fr 1fr;gap:16px
+}
+.info-box span{display:block;color:#818a7d;font-size:10px;margin-bottom:5px}
+.info-box strong{font-size:12px}
+
+/* SHOWREEL */
+.reel-section{background:#090c09}
+.reel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:820px;margin:auto}
+.reel{
+  aspect-ratio:9/16;border-radius:17px;overflow:hidden;
+  background:#111;border:1px solid var(--line);
+  box-shadow:0 20px 50px rgba(0,0,0,.25)
+}
+.reel iframe{width:100%;height:100%;border:0}
+
+/* PROJECTS */
+.projects{background:linear-gradient(135deg,#0a0e09,#121d0e)}
+.portfolio-filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 32px}
+.filter-btn{
+  appearance:none;border:1px solid rgba(156,255,0,.22);
+  background:rgba(18,29,14,.72);color:#e7ebe2;
+  padding:10px 16px;border-radius:30px;font-size:10px;font-weight:800;
+  cursor:pointer;transition:.2s
+}
+.filter-btn:hover,.filter-btn.active{background:var(--green);border-color:var(--green);color:#0a0d08}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.work-card{
+  background:#10160d;border:1px solid rgba(156,255,0,.12);
+  border-radius:15px;padding:10px;transition:.3s
+}
+.work-card:hover{transform:translateY(-6px);border-color:rgba(156,255,0,.45)}
+.thumb{aspect-ratio:9/16;overflow:hidden;border-radius:9px;background:#10140e}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.work-info{display:flex;justify-content:space-between;gap:15px;padding:17px 7px 7px}
+.work-info h3{font-size:18px;line-height:1.15;margin:0}
+.work-info p{font-size:10px;color:#879080;line-height:1.5;margin:7px 0 0}
+.arrow{color:var(--green);font-size:21px}
+.is-hidden{display:none!important}
+.filter-empty{
+  display:none;text-align:center;padding:35px;border:1px dashed var(--line);
+  border-radius:14px;color:var(--muted);font-size:13px
+}
+.filter-empty.show{display:block}
+
+/* SERVICES */
+.services{background:var(--green);color:#0b0e08}
+.services .section-kicker{color:#445021}
+.services .section-top>p{color:#39451f}
+.services h2 em{color:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(10,13,8,.25)}
+.service{
+  min-height:220px;padding:27px 23px 30px 0;
+  border-bottom:1px solid rgba(10,13,8,.25)
+}
+.service:nth-child(3n+2),.service:nth-child(3n+3){padding-left:23px;border-left:1px solid rgba(10,13,8,.25)}
+.service small{font-size:10px;font-weight:800}
+.service h3{font-size:22px;margin:31px 0 10px}
+.service p{font-size:11px;line-height:1.7;color:#3b461f;max-width:280px}
+
+/* PACKAGES */
+.packages{background:#080b08}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.package{
+  background:linear-gradient(160deg,#192416,#11170f);
+  border:1px solid var(--line);border-radius:15px;padding:27px 21px;
+  position:relative;overflow:hidden
+}
+.package.featured{border-color:rgba(156,255,0,.48)}
+.package .tag{
+  position:absolute;right:17px;top:17px;background:var(--yellow);color:#0a0d08;
+  border-radius:20px;padding:6px 9px;font-size:8px;font-weight:800
+}
+.package-icon{font-size:25px;color:var(--green)}
+.package h3{font-size:21px;margin:20px 0 8px}
+.package p{color:var(--muted);font-size:11px;line-height:1.65;min-height:54px}
+.package-price{
+  background:#080b08;border-radius:30px;padding:13px 16px;margin:18px 0;
+  font-size:18px;font-weight:800
+}
+.package-price span{font-size:10px;color:#899181;font-weight:500}
+.package ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.package li{font-size:10px;color:#cdd3c8}
+.package li::before{content:"✓";color:var(--green);font-weight:800;margin-right:8px}
+.package .btn{width:100%;padding:12px}
+
+/* DESIGNS */
+.designs{background:linear-gradient(180deg,#10170d,#080b08)}
+.design-category{margin-top:30px}
+.design-category.hidden{display:none}
+.design-title{display:flex;align-items:center;gap:15px;margin-bottom:18px}
+.design-title .section-kicker{white-space:nowrap}
+.design-title::after{content:"";height:1px;background:var(--line);flex:1}
+.design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.design-card{
+  padding:9px;background:#11170e;border:1px solid var(--line);border-radius:13px;
+  overflow:hidden;transition:.25s
+}
+.design-card:hover{transform:translateY(-5px);border-color:rgba(156,255,0,.45)}
+.design-card img{width:100%;height:auto;object-fit:contain;border-radius:7px;background:#080b08}
+
+/* SKILLS */
+.skills{background:#0a0d09}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.skill{
+  padding:20px;background:#131b10;border:1px solid var(--line);border-radius:12px
+}
+.skill-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.skill-top span{color:var(--green);font-size:10px}
+.bar{height:5px;background:#252c22;border-radius:20px;margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green);border-radius:20px}
+
+/* CONTACT */
+.contact{background:linear-gradient(135deg,#0c120b,#182511)}
+.contact-box{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  background:rgba(18,28,14,.76);border:1px solid var(--line);border-radius:17px;padding:42px
+}
+.contact-box h2{margin-top:0}
+.contact-box>div>p{color:var(--muted);font-size:13px;line-height:1.75}
+.contact-list{display:grid;gap:12px;margin-top:27px}
+.contact-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 0;border-bottom:1px solid rgba(156,255,0,.13);
+  font-size:12px
+}
+.contact-icon{
+  width:35px;height:35px;border:1px solid var(--line);border-radius:50%;
+  display:grid;place-items:center;color:var(--green);flex:none
+}
+.contact-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.contact-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contact-arrow{margin-left:auto;color:var(--green)}
+.form{display:grid;gap:12px}
+.form input,.form textarea,.form select{
+  width:100%;background:#0c110a;color:#eef1eb;
+  border:1px solid rgba(156,255,0,.14);border-radius:8px;
+  padding:14px 15px;outline:none;font-size:11px
+}
+.form textarea{min-height:130px;resize:vertical}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--green)}
+.form .btn{border:0;cursor:pointer;width:max-content}
+
+/* CTA */
+.hire-cta{
+  padding:105px 0;text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(156,255,0,.18),transparent 34%),
+    linear-gradient(135deg,#152014,#253d1c,#0b1009)
+}
+.hire-cta::before,.hire-cta::after{
+  content:"";position:absolute;border:1px solid rgba(156,255,0,.14);border-radius:50%
+}
+.hire-cta::before{width:360px;height:360px;left:-130px;top:-120px}
+.hire-cta::after{width:260px;height:260px;right:-80px;bottom:-100px}
+.hire-cta h2{max-width:850px;margin:13px auto 17px}
+.hire-cta p{color:#c4cdbd;font-size:14px;margin:0 auto 28px}
+
+/* FOOTER */
+footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:#70796d;font-size:10px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-copy p{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-center{order:-1;min-height:430px}
+  .hero-photo{height:430px;width:330px}
+  .specialized{max-width:600px;margin:auto;text-align:center}
+  .socials{justify-content:center;margin-top:25px}
+  .section-top{display:block}
+  .section-top>p{margin-top:18px}
+  .about-grid,.contact-box{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:1fr}
+  .service,.service:nth-child(3n+2),.service:nth-child(3n+3){padding:25px 0;border-left:0}
+  .package-grid{grid-template-columns:1fr}
+  .design-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .logo img{height:50px;max-width:140px}
+  .section{padding:75px 0}
+  h2{letter-spacing:-2px}
+  .hero{padding-top:50px}
+  .hero-copy h1{letter-spacing:-3px}
+  .hero-center{min-height:360px}
+  .hero-photo{height:360px;width:280px}
+  .hero-ring{top:35px}
+  .hero-dot{top:125px}
+  .work-grid,.reel-grid,.skill-grid{grid-template-columns:1fr}
+  .design-grid{grid-template-columns:1fr}
+  .contact-box{padding:24px}
+  .info-box{grid-template-columns:1fr}
+  .footer-inner{display:block}
+  .footer-inner span,.footer-inner a{display:block;margin:7px 0}
+}
+
+/* ===== REFERENCE-STYLE CTA / WHY / FOOTER BRAND ===== */
+.why-section{
+  background:
+    radial-gradient(circle at 78% 35%,rgba(156,255,0,.10),transparent 30%),
+    linear-gradient(135deg,#0b1009,#10170d 55%,#080a08);
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+.why-copy p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  max-width:560px;
+}
+.why-list{display:grid;gap:14px}
+.why-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 22px;
+  border-radius:40px;
+  background:linear-gradient(90deg,rgba(29,41,23,.95),rgba(18,22,16,.95));
+  border:1px solid rgba(156,255,0,.08);
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+  font-size:13px;
+}
+.why-check{
+  width:22px;height:22px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--green);color:#0a0d08;
+  font-weight:900;font-size:12px;flex:none
+}
+.hire-cta{
+  padding:105px 0;
+  background:
+    radial-gradient(circle at 75% 50%,rgba(156,255,0,.13),transparent 30%),
+    linear-gradient(135deg,#11180d,#263b1b 55%,#0a0d08);
+}
+.hire-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:35px;
+  background:rgba(18,26,14,.55);
+  border:1px solid rgba(156,255,0,.12);
+  border-radius:22px;padding:50px 55px;
+}
+.hire-copy h2{margin-top:10px}
+.hire-copy p{color:var(--muted);font-size:13px;line-height:1.7;margin:15px 0 0}
+.hire-actions{display:flex;align-items:center;gap:18px;flex:none}
+.hire-play{
+  width:68px;height:68px;border-radius:50%;
+  background:var(--green);color:#0a0d08;
+  display:grid;place-items:center;
+  font-size:24px;border:10px solid rgba(156,255,0,.08);
+  box-shadow:0 0 0 10px rgba(156,255,0,.05);
+}
+.footer-brand{
+  display:flex;align-items:flex-start;gap:18px;
+}
+.footer-logo{width:155px;height:auto;max-height:65px;object-fit:contain;object-position:left center}
+.footer-desc{max-width:330px;color:#8d9687;font-size:11px;line-height:1.7;margin:12px 0 0}
+.footer-socials{display:flex;gap:7px;margin-top:15px}
+.footer-socials a{
+  width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;background:var(--green);color:#0a0d08;
+  font-size:9px;font-weight:800;transition:.2s
+}
+.footer-socials a:hover{background:var(--yellow);transform:translateY(-2px)}
+.footer-heading{font-size:18px;font-weight:800;margin:0 0 16px}
+.footer-links{display:grid;gap:9px}
+.footer-links a{font-size:11px;color:#9da59a;transition:.2s}
+.footer-links a:hover{color:var(--green)}
+.footer-contact{display:grid;gap:9px}
+.footer-contact a{font-size:11px;color:#9da59a}
+.footer-contact a:hover{color:var(--green)}
+@media(max-width:800px){
+  .why-grid{grid-template-columns:1fr}
+  .hire-inner{display:block;padding:35px 25px}
+  .hire-actions{margin-top:28px}
+  .footer-brand{display:block}
+}
+@media(max-width:600px){
+  .hire-actions{gap:13px}
+  .hire-play{width:58px;height:58px}
+  .footer-logo{width:145px}
+}
+
+
+@media(max-width:600px){
+  footer .container > div:first-child{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+  footer .container > div:last-child{
+    display:block !important;
+  }
+  footer .container > div:last-child span,
+  footer .container > div:last-child a{
+    display:block;
+    margin:7px 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home" aria-label="Advisual Studio"><img src="Logo.png" alt="Advisual Studio"></a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Projects</a>
+      <a href="#designs">Designs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/919369847401" target="_blank" rel="noopener">Hire Me ↗</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <div class="eyebrow"><i></i>Available for freelance projects</div>
+      <h1>Gagan<br><span class="yellow">Gautam.</span></h1>
+      <div style="color:var(--green);font-weight:800;letter-spacing:.16em;font-size:12px">VIDEO EDITOR</div>
+      <p>I transform raw footage into engaging visual stories — from high-retention reels to long-form YouTube videos, educational content, motion graphics and social media campaigns.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#work">View My Work ↗</a>
+        <a class="outline" href="https://wa.me/919369847401" target="_blank" rel="noopener">Let's Talk ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-center">
+      <div class="hero-orbit"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-dot"></div>
+      <img class="hero-photo" src="profile.jpg" alt="Gagan Gautam — Video Editor">
+    </div>
+
+    <div class="specialized">
+      <div class="mini">Specialized In</div>
+      <h3>Creating visual content that keeps people watching.</h3>
+      <p>Short-form editing, educational storytelling, corporate communication, motion graphics, color grading and social-first creative design.</p>
+      <div style="margin-top:22px;font-size:12px;font-weight:700">4+ Years of Editing Experience ↗</div>
+      <div class="socials">
+        <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">IG</a>
+        <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA</a>
+        <a href="mailto:advisualstudiodesign@gmail.com">✉</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Video Editing</span><span>Motion Graphics</span><span>Educational Content</span><span>Short Form</span><span>Long Form</span><span>Color Grading</span><span>Posters & Designs</span>
+    <span>Video Editing</span><span>Motion Graphics</span><span>Educational Content</span><span>Short Form</span><span>Long Form</span><span>Color Grading</span><span>Posters & Designs</span>
+  </div>
+</div>
+
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <img src="profile.jpg" alt="Gagan Gautam">
+      <div class="number">4+</div>
+    </div>
+    <div class="about-copy">
+      <div class="section-kicker">01 / About Me</div>
+      <h2>CREATIVITY TO<br>SHAPE A <em>BETTER EDIT.</em></h2>
+      <p class="lead">I’m a Video Editor focused on turning ideas, footage and information into clear, engaging and memorable visual stories.</p>
+      <p>With 4+ years of editing experience, I work across short-form reels, long-form videos, educational content, motion graphics and social media creatives. My approach combines clean cuts, strong pacing, purposeful visuals and polished finishing.</p>
+      <div class="info-box">
+        <div><span>Specialization</span><strong>Video Editing + Motion Graphics</strong></div>
+        <div><span>Content</span><strong>Reels • YouTube • Education • Corporate</strong></div>
+        <div><span>Experience</span><strong>4+ Years</strong></div>
+        <div><span>Location</span><strong>India • Remote Friendly</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reel-section" id="reel">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">02 / Showreel</div>
+        <h2>WATCH MY<br><em>BEST WORK.</em></h2>
+      </div>
+      <p>A glimpse into my editing style — attention-first pacing, clean transitions, motion graphics, educational storytelling and polished visual finishing.</p>
+    </div>
+
+    <div class="reel-grid">
+      <div class="reel"><iframe src="https://www.youtube.com/embed/1L1OF53MxJQ" title="Gagan Gautam Best Work 1" allowfullscreen></iframe></div>
+      <div class="reel"><iframe src="https://www.youtube.com/embed/k0K7cMCulns" title="Gagan Gautam Best Work 2" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="section projects" id="work">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">03 / Projects</div>
+        <h2>MY <em>WORK.</em></h2>
+      </div>
+      <p>A selection of educational, corporate, communication and concept-driven edits created for social and digital audiences.</p>
+    </div>
+
+    <div class="portfolio-filters" aria-label="Portfolio filters">
+      <button class="filter-btn active" type="button" data-filter="all">ALL</button>
+      <button class="filter-btn" type="button" data-filter="shorts">SHORTS</button>
+      <button class="filter-btn" type="button" data-filter="long-form">LONG FORM</button>
+      <button class="filter-btn" type="button" data-filter="educational">EDUCATIONAL</button>
+      <button class="filter-btn" type="button" data-filter="corporate">CORPORATE</button>
+      <button class="filter-btn" type="button" data-filter="motion-graphics">MOTION GRAPHICS</button>
+      <button class="filter-btn" type="button" data-filter="posters">POSTERS</button>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+
+      <a class="work-card" data-categories="shorts educational motion-graphics" href="https://youtube.com/shorts/dojfunJILys" target="_blank" rel="noopener">
+        <div class="thumb"><img src="polygon.png" alt="5 Sec Mein Polygon"></div>
+        <div class="work-info"><div><h3>5 SEC में POLYGON</h3><p>Educational Reel • Motion Graphics • Storytelling</p></div><span class="arrow">↗</span></div>
+      </a>
+
+      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/v7JHNfEKmMk" target="_blank" rel="noopener">
+        <div class="thumb"><img src="polarity.png" alt="Same Shape Opposite Polarity"></div>
+        <div class="work-info"><div><h3>SAME SHAPE, OPPOSITE POLARITY</h3><p>Chemistry Reel • Educational Content • Visual Editing</p></div><span class="arrow">↗</span></div>
+      </a>
+
+      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/k0K7cMCulns" target="_blank" rel="noopener">
+        <div class="thumb"><img src="omniscient.png" alt="The Word For I Know Everything"></div>
+        <div class="work-info"><div><h3>THE WORD FOR “I KNOW EVERYTHING”</h3><p>English Reel • Typography • Educational Editing</p></div><span class="arrow">↗</span></div>
+      </a>
+
+      <a class="work-card" data-categories="shorts motion-graphics" href="https://youtube.com/shorts/1L1OF53MxJQ" target="_blank" rel="noopener">
+        <div class="thumb"><img src="sorry.png" alt="Don't Say Sorry"></div>
+        <div class="work-info"><div><h3>DON’T SAY “SORRY”</h3><p>Communication Reel • Creative Editing • Motion Graphics</p></div><span class="arrow">↗</span></div>
+      </a>
+
+      <a class="work-card" data-categories="shorts corporate motion-graphics" href="https://youtube.com/shorts/GTuCWIWJSxQ" target="_blank" rel="noopener">
+        <div class="thumb"><img src="bollywood.png" alt="What If Bollywood Spoke Corporate"></div>
+        <div class="work-info"><div><h3>WHAT IF BOLLYWOOD SPOKE CORPORATE?</h3><p>Corporate Reel • Creative Concept • Video Editing</p></div><span class="arrow">↗</span></div>
+      </a>
+
+      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/iv4uqkgd8lo" target="_blank" rel="noopener">
+        <div class="thumb"><img src="Concept.png" alt="Cramming Nahi Concept Samjho"></div>
+        <div class="work-info"><div><h3>CRAMMING नहीं, CONCEPT समझो!</h3><p>Educational Reel • Concept • Visual Storytelling</p></div><span class="arrow">↗</span></div>
+      </a>
+
+    </div>
+    <div class="filter-empty" id="filterEmpty">No projects in this category yet — more work coming soon.</div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">04 / Services</div>
+        <h2>DELIVERING<br><span style="color:#fff">CREATIVE</span> <em>EXPERIENCE.</em></h2>
+      </div>
+      <p>Editing services built around clear storytelling, strong visuals and content designed to hold attention.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service"><small>01</small><h3>Short Form Editing</h3><p>Instagram Reels, YouTube Shorts and fast-paced social videos with captions, hooks and retention-focused pacing.</p></div>
+      <div class="service"><small>02</small><h3>Long Form Editing</h3><p>YouTube and educational videos with structured storytelling, B-roll, sound design and smooth pacing.</p></div>
+      <div class="service"><small>03</small><h3>Motion Graphics</h3><p>Kinetic typography, animated titles, transitions and supporting visual effects.</p></div>
+      <div class="service"><small>04</small><h3>Color Grading</h3><p>Clean, consistent and cinematic color treatment for a polished final look.</p></div>
+      <div class="service"><small>05</small><h3>Posters & Banners</h3><p>Social media posters, banners, thumbnails and promotional creative design.</p></div>
+      <div class="service"><small>06</small><h3>Social Media Ads</h3><p>Attention-first edits designed to communicate the message quickly and clearly.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section why-section" id="why">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <div class="section-kicker">05 / Why Work With Me</div>
+      <h2>CREATIVE IDEAS<br>TO ELEVATE YOUR <em>BRAND.</em></h2>
+      <p>I combine editing, motion graphics and visual design to turn raw footage and ideas into content that looks professional, communicates clearly and keeps viewers watching.</p>
+      <p><strong style="color:#f5f7f2">Advisual Studio</strong> also supports creative ads, posters and thumbnails when your brand needs more than just video editing.</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item"><span class="why-check">✓</span><span>Creative Video Editing</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Engaging Visual Storytelling</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Motion Graphics & Social Creatives</span></div>
+      <div class="why-item"><span class="why-check">✓</span><span>Fast & Reliable Delivery</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section packages" id="packages">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">06 / Editing Plans</div>
+        <h2>CHOOSE YOUR<br><em>EDITING NEED.</em></h2>
+      </div>
+      <p>Instead of fixed public pricing, every project can be quoted according to duration, complexity, turnaround and deliverables.</p>
+    </div>
+
+    <div class="package-grid">
+      <div class="package">
+        <div class="package-icon">✦</div>
+        <h3>Short Form</h3>
+        <p>For reels, shorts and social-first content where the first seconds matter.</p>
+        <div class="package-price">Custom Quote <span>/ project</span></div>
+        <ul><li>Hook-focused editing</li><li>Captions & text animation</li><li>Fast pacing & transitions</li><li>Social-ready export</li></ul>
+        <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%27m%20interested%20in%20Short%20Form%20Editing." target="_blank" rel="noopener">Get Quote ↗</a>
+      </div>
+
+      <div class="package featured">
+        <div class="tag">POPULAR</div>
+        <div class="package-icon">⚡</div>
+        <h3>Long Form</h3>
+        <p>For YouTube, educational and information-heavy videos that need structure.</p>
+        <div class="package-price">Custom Quote <span>/ project</span></div>
+        <ul><li>Story structure & pacing</li><li>B-roll & visual support</li><li>Sound cleanup</li><li>Polished final delivery</li></ul>
+        <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%27m%20interested%20in%20Long%20Form%20Editing." target="_blank" rel="noopener">Get Quote ↗</a>
+      </div>
+
+      <div class="package">
+        <div class="package-icon">◇</div>
+        <h3>Creative Pack</h3>
+        <p>For brands and creators needing video plus motion graphics and design support.</p>
+        <div class="package-price">Custom Quote <span>/ project</span></div>
+        <ul><li>Video editing</li><li>Motion graphics</li><li>Posters / banners</li><li>Social media creatives</li></ul>
+        <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%27m%20interested%20in%20the%20Creative%20Pack." target="_blank" rel="noopener">Get Quote ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section designs" id="designs">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">07 / Posters & Banners</div>
+        <h2>DESIGN <em>WORK.</em></h2>
+      </div>
+      <p>Poster and banner designs created for education, promotions, social media and digital campaigns.</p>
+    </div>
+
+    <div class="design-category" id="posterCategory">
+      <div class="design-title"><div class="section-kicker">POSTERS / 1080 × 1280</div></div>
+      <div class="design-grid">
+        <div class="design-card"><img src="poster1.jpg" alt="Poster Design 1"></div>
+        <div class="design-card"><img src="poster2.jpg" alt="Poster Design 2"></div>
+        <div class="design-card"><img src="poster3.png" alt="Poster Design 3"></div>
+        <div class="design-card"><img src="poster4.png" alt="Poster Design 4"></div>
+        <div class="design-card"><img src="poster5.png" alt="Poster Design 5"></div>
+        <div class="design-card"><img src="poster6.png" alt="Poster Design 6"></div>
+      </div>
+    </div>
+
+    <div class="design-category" id="bannerCategory">
+      <div class="design-title"><div class="section-kicker">BANNERS / 5</div></div>
+      <div class="design-grid">
+        <div class="design-card"><img src="banner1.png" alt="Banner Design 1"></div>
+        <div class="design-card"><img src="banner2.png" alt="Banner Design 2"></div>
+        <div class="design-card"><img src="banner3.png" alt="Banner Design 3"></div>
+        <div class="design-card"><img src="banner4.png" alt="Banner Design 4"></div>
+        <div class="design-card"><img src="banner5.png" alt="Banner Design 5"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section skills" id="skills">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">08 / Core Skills</div>
+        <h2>THE TOOLS<br>BEHIND <em>MY WORK.</em></h2>
+      </div>
+    </div>
+    <div class="skill-grid">
+      <div class="skill"><div class="skill-top"><strong>Adobe Premiere Pro</strong><span>95%</span></div><div class="bar"><i style="width:95%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>Adobe After Effects</strong><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>Adobe Photoshop</strong><span>92%</span></div><div class="bar"><i style="width:92%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>Adobe Illustrator</strong><span>80%</span></div><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>Canva</strong><span>90%</span></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>CapCut Pro</strong><span>92%</span></div><div class="bar"><i style="width:92%"></i></div></div>
+      <div class="skill"><div class="skill-top"><strong>Color Grading</strong><span>88%</span></div><div class="bar"><i style="width:88%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="section-kicker">09 / Contact</div>
+        <h2>LET'S CREATE<br><em>SOMETHING.</em></h2>
+        <p>Have a project in mind? Send the details or contact me directly. I’ll get back to you with the next steps.</p>
+
+        <div class="contact-list">
+          <a class="contact-item" href="tel:+917827610998">
+            <span class="contact-icon">☎</span><span class="contact-text">+91 78276 10998</span><span class="contact-arrow">↗</span>
+          </a>
+          <a class="contact-item" href="https://wa.me/919369847401" target="_blank" rel="noopener">
+            <span class="contact-icon">WA</span><span class="contact-text">+91 93698 47401</span><span class="contact-arrow">↗</span>
+          </a>
+          <a class="contact-item" href="mailto:advisualstudiodesign@gmail.com">
+            <span class="contact-icon">✉</span><span class="contact-text">advisualstudiodesign@gmail.com</span><span class="contact-arrow">↗</span>
+          </a>
+          <a class="contact-item" href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">
+            <span class="contact-icon">IG</span><span class="contact-text">@advisualstudioofficial</span><span class="contact-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      
+<form class="form" id="contactForm">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <select name="service" required>
+    <option value="">Select Service</option>
+    <option>Short Video Editing</option>
+    <option>Long Video Editing</option>
+    <option>Educational Video</option>
+    <option>Corporate Video</option>
+    <option>Motion Graphics</option>
+    <option>Posters & Banners</option>
+  </select>
+  <input type="text" name="subject" placeholder="Subject">
+  <textarea name="message" placeholder="Write Your Message" required></textarea>
+  <button class="btn" type="submit" id="sendMessageBtn">Send Message ↗</button>
+  <div id="formStatus" style="display:none;font-size:11px;line-height:1.6;color:#c4d0c3"></div>
+</form>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="hire-cta" id="hire">
+  <div class="container hire-inner">
+    <div class="hire-copy">
+      <div class="section-kicker">10 / Hire Me</div>
+      <h2>HAVE A VIDEO<br>TO <em>EDIT?</em></h2>
+      <p>Let's turn your footage into something people want to watch.</p>
+    </div>
+    <div class="hire-actions">
+      <a class="btn" href="https://wa.me/919369847401?text=Hi%20Gagan%2C%20I%20have%20a%20video%20editing%20project%20and%20would%20like%20to%20discuss%20it." target="_blank" rel="noopener">💼 Hire Me Now</a>
+      <a class="hire-play" href="#reel" aria-label="Watch showreel">▷</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+
+<footer>
+  <div class="container" style="padding-bottom:28px">
+    <div style="display:grid;grid-template-columns:1.15fr .75fr .9fr;gap:55px;align-items:start">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="Logo.png" alt="Advisual Studio">
+        </div>
+        <p class="footer-desc">Creative Ads & Branding • Video Ads • Posters • Thumbnails. Grow your business with creative design and engaging video content.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">IG</a>
+          <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA</a>
+          <a href="mailto:advisualstudiodesign@gmail.com">✉</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">» Home</a>
+          <a href="#about">» About Me</a>
+          <a href="#services">» Services</a>
+          <a href="#work">» Projects</a>
+          <a href="#designs">» Designs</a>
+          <a href="#contact">» Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <div class="footer-contact">
+          <a href="tel:+917827610998">☎ +91 78276 10998</a>
+          <a href="https://wa.me/919369847401" target="_blank" rel="noopener">WA +91 93698 47401</a>
+          <a href="mailto:advisualstudiodesign@gmail.com">✉ advisualstudiodesign@gmail.com</a>
+          <a href="https://instagram.com/advisualstudioofficial" target="_blank" rel="noopener">◎ @advisualstudioofficial</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(156,255,0,.12);margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#70796d;font-size:10px">
+      <span>© 2026 GAGAN GAUTAM · ADVISUAL STUDIO</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function applyFilter(filter){
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#workGrid .work-card');
+    const posterCategory = document.getElementById('posterCategory');
+    const bannerCategory = document.getElementById('bannerCategory');
+    const designs = document.getElementById('designs');
+    const empty = document.getElementById('filterEmpty');
+
+    buttons.forEach(function(b){b.classList.toggle('active', b.dataset.filter === filter)});
+    let visible = 0;
+    cards.forEach(function(card){
+      const cats = (card.dataset.categories || '').split(/\s+/).filter(Boolean);
+      const show = filter === 'all' || cats.includes(filter);
+      card.classList.toggle('is-hidden', !show);
+      if(show) visible++;
+    });
+    if(empty) empty.classList.toggle('show', visible === 0 && filter !== 'posters');
+    if(posterCategory) posterCategory.classList.toggle('hidden', filter !== 'all' && filter !== 'posters');
+    if(bannerCategory) bannerCategory.classList.toggle('hidden', filter === 'posters' || filter !== 'all');
+    if(filter === 'posters') setTimeout(function(){ if(designs) designs.scrollIntoView({behavior:'smooth',block:'start'}); },100);
+  }
+
+  document.addEventListener('click', function(e){
+    const button = e.target.closest('.filter-btn');
+    if(button) applyFilter(button.dataset.filter || 'all');
+  });
+})();
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { getFirestore, collection, getDocs, query, orderBy, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6LIAjmG6lPTYXZXXc0v2cAmK1jL9xRJw",
+  authDomain: "advisual-studio-admin.firebaseapp.com",
+  projectId: "advisual-studio-admin",
+  storageBucket: "advisual-studio-admin.firebasestorage.app",
+  messagingSenderId: "883242532024",
+  appId: "1:883242532024:web:896cda30f0401c8ac5884d",
+  measurementId: "G-6XH4DTWZJD"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+function safe(value){
+  return String(value ?? '').replace(/[&<>"']/g, function(ch){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch];
+  });
+}
+
+async function loadAdminProjects(){
+  const grid = document.getElementById('workGrid');
+  if(!grid) return;
+  try{
+    const snap = await getDocs(query(collection(db,'projects'), orderBy('order','asc')));
+    if(snap.empty) return; // Keep the exact final static portfolio until admin adds a project.
+
+    grid.innerHTML = '';
+    snap.forEach(function(doc){
+      const p = doc.data();
+      const categories = String(p.category || 'shorts').toLowerCase().trim().replace(/,/g,' ');
+      const card = document.createElement('a');
+      card.className = 'work-card';
+      card.dataset.categories = categories;
+      card.href = p.url || '#';
+      card.target = '_blank';
+      card.rel = 'noopener';
+      card.innerHTML = '<div class="thumb"><img src="'+safe(p.image || 'profile.jpg')+'" alt="'+safe(p.title || 'Project')+'" loading="lazy"></div>'+
+        '<div class="work-info"><div><h3>'+safe(p.title || 'Untitled Project')+'</h3><p>'+safe(p.description || 'Creative video project')+'</p></div><div class="arrow">↗</div></div>';
+      grid.appendChild(card);
+    });
+  }catch(err){
+    console.warn('Firestore projects unavailable; keeping the final static portfolio.', err);
+  }
+}
+
+const form = document.getElementById('contactForm');
+const button = document.getElementById('sendMessageBtn');
+const status = document.getElementById('formStatus');
+
+if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const service = String(data.get('service') || '').trim();
+    const subject = String(data.get('subject') || 'Website Project Inquiry').trim();
+    const message = String(data.get('message') || '').trim();
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    status.style.display = 'block';
+    status.style.color = '#c4d0c3';
+    status.textContent = 'Sending your enquiry...';
+
+    try{
+      await addDoc(collection(db,'messages'), {
+        name, email, service, subject, message,
+        read: false,
+        createdAt: serverTimestamp()
+      });
+
+      status.textContent = '✓ Message sent successfully. I will get back to you soon.';
+      status.style.color = '#9cff00';
+      form.reset();
+    }catch(err){
+      console.error(err);
+      status.textContent = 'Please try again or contact me directly on WhatsApp.';
+      status.style.color = '#ffc400';
+    }finally{
+      button.disabled = false;
+      button.textContent = 'Send Message ↗';
+    }
+  });
+}
+
+loadAdminProjects();
+</script>
+
+</body>
+</html>
