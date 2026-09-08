@@ -105,10 +105,8 @@ h2 em{font-style:normal;color:var(--yellow)}
 .hero-copy h1 .yellow{color:var(--yellow)}
 .hero-copy p{max-width:430px;color:var(--muted);font-size:13px;line-height:1.75}
 .hero-actions{display:flex;gap:11px;margin-top:27px;flex-wrap:wrap}
-.hero-center{position:relative;min-height:520px;display:flex;align-items:end;justify-content:center}
-.hero-photo{
-  width:min(460px,100%);height:520px;
-  object-fit:contain;object-position:center bottom;
+.hero-center{position:relative;min-height:610px;display:flex;align-items:flex-start;justify-content:center;padding-top:0}
+.hero-photo{width:min(560px,100%);height:650px;object-fit:contain;object-position:center top;
   border-radius:0;
   filter:saturate(.98) drop-shadow(0 20px 35px rgba(0,0,0,.24));
   position:relative;z-index:2;
@@ -336,8 +334,8 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   .hero-grid{grid-template-columns:1fr;text-align:center}
   .hero-copy p{margin-left:auto;margin-right:auto}
   .hero-actions{justify-content:center}
-  .hero-center{order:-1;min-height:430px}
-  .hero-photo{height:430px;width:430px;object-fit:contain;border-radius:0}
+  .hero-center{order:-1;min-height:500px;padding-top:0}
+  .hero-photo{height:500px;width:500px;max-width:100%;object-fit:contain;border-radius:0}
   .specialized{max-width:600px;margin:auto;text-align:center}
   .socials{justify-content:center;margin-top:25px}
   .section-top{display:block}
@@ -354,8 +352,8 @@ footer{background:#050705;border-top:1px solid var(--line);padding:27px 0;color:
   h2{letter-spacing:-2px}
   .hero{padding-top:50px}
   .hero-copy h1{letter-spacing:-3px}
-  .hero-center{min-height:360px}
-  .hero-photo{height:360px;width:360px;object-fit:contain;border-radius:0}
+  .hero-center{min-height:420px;padding-top:0}
+  .hero-photo{height:420px;width:420px;max-width:100%;object-fit:contain;border-radius:0}
   .hero-ring{top:35px}
   .hero-dot{top:125px}
   .work-grid,.reel-grid,.skill-grid{grid-template-columns:1fr}
@@ -988,7 +986,7 @@ body{
       <div class="hero-orbit"></div>
       <div class="hero-ring"></div>
       <div class="hero-dot"></div>
-      <img class="hero-photo" src="profile-premium.png" alt="Gagan Gautam — Video Editor">
+      <img class="hero-photo" src="gagan-hero.png" alt="Gagan Gautam — Video Editor">
     </div>
 
     <div class="specialized">
