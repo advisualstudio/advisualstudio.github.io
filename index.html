@@ -1484,6 +1484,7 @@ function safe(value){
 }
 
 async function loadAdminProjects(){
+  return; // Keep the static portfolio cards; do not replace them with Firebase admin projects.
   const grid = document.getElementById('workGrid');
   if(!grid) return;
   try{
