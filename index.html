@@ -851,6 +851,12 @@ body{
 }
 
 
+/* ===== DRIVE VIDEO PROJECT CARDS ===== */
+.drive-video-card .thumb{position:relative;background:#080b08}
+.drive-video-card .thumb iframe{width:100%;height:100%;display:block;border:0}
+.drive-video-card .work-info{min-height:85px}
+@media(max-width:600px){.drive-video-card .thumb{height:420px}}
+
 /* ===== PREMIUM LOCAL VIDEO PROJECT CARDS ===== */
 .video-project .thumb{
   position:relative;
@@ -1044,70 +1050,66 @@ body{
 
     <div class="portfolio-filters" aria-label="Portfolio filters">
       <button class="filter-btn active" type="button" data-filter="all">ALL</button>
+      <button class="filter-btn" type="button" data-filter="motion-graphic">MOTION GRAPHIC</button>
+      <button class="filter-btn" type="button" data-filter="real-estate">REAL ESTATE</button>
       <button class="filter-btn" type="button" data-filter="shorts">SHORTS</button>
-      <button class="filter-btn" type="button" data-filter="long-form">LONG FORM</button>
-      <button class="filter-btn" type="button" data-filter="educational">EDUCATIONAL</button>
-      <button class="filter-btn" type="button" data-filter="corporate">CORPORATE</button>
-      <button class="filter-btn" type="button" data-filter="motion-graphics">MOTION GRAPHICS</button>
-      <button class="filter-btn" type="button" data-filter="posters">POSTERS</button>
+      <button class="filter-btn" type="button" data-filter="education">EDUCATION</button>
+      <button class="filter-btn" type="button" data-filter="long-video">LONG VIDEO</button>
+      <button class="filter-btn" type="button" data-filter="posters">POSTER</button>
+      <button class="filter-btn" type="button" data-filter="banners">BANNER</button>
     </div>
 
     <div class="work-grid" id="workGrid">
 
-      <a class="work-card" data-categories="shorts educational motion-graphics" href="https://youtube.com/shorts/dojfunJILys" target="_blank" rel="noopener">
-        <div class="thumb"><img src="polygon.png" alt="5 Sec Mein Polygon"></div>
-        <div class="work-info"><div><h3>5 SEC में POLYGON</h3><p>Educational Reel • Motion Graphics • Storytelling</p></div><span class="arrow">↗</span></div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="motion-graphic">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/17pmTeLZamsqf8RWoMPija63vkDk2jZnN/preview" title="Motion Graphic Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Motion Graphic Project 01</h3><p>Motion Graphic • Animation • Visual Effects</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/v7JHNfEKmMk" target="_blank" rel="noopener">
-        <div class="thumb"><img src="polarity.png" alt="Same Shape Opposite Polarity"></div>
-        <div class="work-info"><div><h3>SAME SHAPE, OPPOSITE POLARITY</h3><p>Chemistry Reel • Educational Content • Visual Editing</p></div><span class="arrow">↗</span></div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="motion-graphic">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI/preview" title="Motion Graphic Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Motion Graphic Project 02</h3><p>Motion Graphic • Animation • Visual Effects</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/k0K7cMCulns" target="_blank" rel="noopener">
-        <div class="thumb"><img src="omniscient.png" alt="The Word For I Know Everything"></div>
-        <div class="work-info"><div><h3>THE WORD FOR “I KNOW EVERYTHING”</h3><p>English Reel • Typography • Educational Editing</p></div><span class="arrow">↗</span></div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="real-estate">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1yfAH_MTcPRiVmFqMjLwWBSgsUapUt_17/preview" title="Real Estate Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Real Estate Video 01</h3><p>Real Estate • Property Showcase • Video Editing</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts motion-graphics" href="https://youtube.com/shorts/1L1OF53MxJQ" target="_blank" rel="noopener">
-        <div class="thumb"><img src="sorry.png" alt="Don't Say Sorry"></div>
-        <div class="work-info"><div><h3>DON’T SAY “SORRY”</h3><p>Communication Reel • Creative Editing • Motion Graphics</p></div><span class="arrow">↗</span></div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="real-estate">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1FMZzwSNu0v8iHY-Lo5SRD0dTk-1wOEEp/preview" title="Real Estate Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Real Estate Video 02</h3><p>Real Estate • Property Showcase • Video Editing</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts corporate motion-graphics" href="https://youtube.com/shorts/GTuCWIWJSxQ" target="_blank" rel="noopener">
-        <div class="thumb"><img src="bollywood.png" alt="What If Bollywood Spoke Corporate"></div>
-        <div class="work-info"><div><h3>WHAT IF BOLLYWOOD SPOKE CORPORATE?</h3><p>Corporate Reel • Creative Concept • Video Editing</p></div><span class="arrow">↗</span></div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="shorts">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1bpePnugCeSR47ExRLAt1F_-VhChKitdN/preview" title="Shorts Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Shorts Project 01</h3><p>Short-form Video • Social Media • Editing</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts educational" href="https://youtube.com/shorts/iv4uqkgd8lo" target="_blank" rel="noopener">
-        <div class="thumb"><img src="Concept.png" alt="Cramming Nahi Concept Samjho"></div>
-        <div class="work-info"><div><h3>CRAMMING नहीं, CONCEPT समझो!</h3><p>Educational Reel • Concept • Visual Storytelling</p></div><span class="arrow">↗</span></div>
-      </a>
-      <a class="work-card" data-categories="shorts long-form educational" href="https://youtube.com/shorts/UGebRx4GNqM" target="_blank" rel="noopener">
-        <div class="thumb">
-          <img src="https://img.youtube.com/vi/UGebRx4GNqM/hqdefault.jpg" alt="Video Editing & Storytelling">
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>VIDEO EDITING &amp; STORYTELLING</h3>
-            <p>Short Form • Professional Editing • Storytelling</p>
-          </div>
-          <span class="arrow">↗</span>
-        </div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="shorts">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/173zXYySLEG4xambzPvwpb5CO4TlX26-a/preview" title="Shorts Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Shorts Project 02</h3><p>Short-form Video • Social Media • Editing</p></div><span class="arrow">▶</span></div>
+      </article>
 
-      <a class="work-card" data-categories="shorts motion-graphics" href="https://youtube.com/shorts/y3aYuLjLj-c" target="_blank" rel="noopener">
-        <div class="thumb">
-          <img src="https://img.youtube.com/vi/y3aYuLjLj-c/hqdefault.jpg" alt="Motion Graphics & Visual Editing">
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>MOTION GRAPHICS &amp; VISUAL EDITING</h3>
-            <p>Effects • Animation • Creative Visuals</p>
-          </div>
-          <span class="arrow">↗</span>
-        </div>
-      </a>
+      <article class="work-card drive-video-card" data-categories="education">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1voGOBxhPtPDK2e9IHbgDxor0BDeHdVO_/preview" title="Education Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Education Video 01</h3><p>Educational Content • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
+      </article>
+
+      <article class="work-card drive-video-card" data-categories="education">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/16v1KyFqiBc0pwKFWvxwJnZwHqzcBF9c1/preview" title="Education Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Education Video 02</h3><p>Educational Content • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
+      </article>
+
+      <article class="work-card drive-video-card" data-categories="long-video">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY/preview" title="Long Video Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Long Video Project 01</h3><p>Long-form Video • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
+      </article>
+
+      <article class="work-card drive-video-card" data-categories="long-video">
+        <div class="thumb"><iframe src="https://drive.google.com/file/d/15eyMJ-cAEdVZkZ6NP85yg5OywIIFAF7l/preview" title="Long Video Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="work-info"><div><h3>Long Video Project 02</h3><p>Long-form Video • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
+      </article>
     </div>
     <div class="filter-empty" id="filterEmpty">No projects in this category yet — more work coming soon.</div>
   </div>
@@ -1205,12 +1207,20 @@ body{
     </div>
 
     <div class="design-category" id="posterCategory">
-      <div class="design-title"><div class="section-kicker">POSTERS / 1080 × 1280</div></div>
+      <div class="design-title"><div class="section-kicker">POSTERS</div></div>
       <div class="design-grid">
-        <div class="design-card"><img src="poster1.jpg" alt="Poster Design 1"></div>
-        <div class="design-card"><img src="poster2.jpg" alt="Poster Design 2"></div>
-        <div class="design-card"><img src="poster3.png" alt="Poster Design 3"></div>
+        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0" alt="Poster Design 1" loading="lazy"></div>
+        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI" alt="Poster Design 2" loading="lazy"></div>
+        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz" alt="Poster Design 3" loading="lazy"></div>
       </div>
+    </div>
+    <div class="design-category" id="bannerCategory">
+      <div class="design-title"><div class="section-kicker">BANNERS</div></div>
+      <div class="design-grid">
+        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw" alt="Banner Design 1" loading="lazy"></div>
+        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB" alt="Banner Design 2" loading="lazy"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1365,10 +1375,11 @@ body{
       card.classList.toggle('is-hidden', !show);
       if(show) visible++;
     });
-    if(empty) empty.classList.toggle('show', visible === 0 && filter !== 'posters');
+    const designFilter = filter === 'posters' || filter === 'banners';
+    if(empty) empty.classList.toggle('show', visible === 0 && !designFilter);
     if(posterCategory) posterCategory.classList.toggle('hidden', filter !== 'all' && filter !== 'posters');
-    if(bannerCategory) bannerCategory.classList.toggle('hidden', filter === 'posters' || filter !== 'all');
-    if(filter === 'posters') setTimeout(function(){ if(designs) designs.scrollIntoView({behavior:'smooth',block:'start'}); },100);
+    if(bannerCategory) bannerCategory.classList.toggle('hidden', filter !== 'all' && filter !== 'banners');
+    if(designFilter) setTimeout(function(){ if(designs) designs.scrollIntoView({behavior:'smooth',block:'start'}); },100);
   }
 
   document.addEventListener('click', function(e){
