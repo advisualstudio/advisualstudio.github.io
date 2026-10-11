@@ -1095,6 +1095,76 @@ body{
 .portfolio-stat strong em{font-style:normal;color:var(--yellow)}
 @media(max-width:600px){.portfolio-stats{grid-template-columns:1fr;gap:10px}.portfolio-stat{display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;gap:5px 14px;padding:15px 17px}.portfolio-stat .stat-label{grid-column:1;margin:0}.portfolio-stat strong{grid-column:2;grid-row:1 / span 2}.portfolio-stat p{grid-column:1;margin:0}}
 
+
+/* FIX: WATCH MY BEST WORK — show complete 9:16 portrait cards */
+.reel-section .reel-grid.motion-best-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:start !important;
+  gap:28px !important;
+  max-width:100% !important;
+}
+.reel-section .motion-best-card,
+.reel-section .reel.motion-best-card{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:visible !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.reel-section .motion-best-card .thumb,
+.reel-section .motion-best-card .thumb.drive-player{
+  display:block !important;
+  position:relative !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:9 / 16 !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  border:1px solid rgba(156,255,0,.2) !important;
+  border-radius:16px !important;
+  background:#080b08 !important;
+}
+.reel-section .motion-best-card .thumb iframe,
+.reel-section .motion-best-card .thumb video,
+.reel-section .motion-best-card .thumb img.drive-preview-image{
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  border:0 !important;
+}
+.reel-section .motion-best-card h3{
+  margin:14px 0 0 !important;
+  font-size:18px !important;
+}
+@media(max-width:700px){
+  .reel-section .reel-grid.motion-best-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+  }
+  .reel-section .motion-best-card .thumb,
+  .reel-section .motion-best-card .thumb.drive-player{
+    aspect-ratio:9 / 16 !important;
+  }
+}
+@media(max-width:420px){
+  .reel-section .reel-grid.motion-best-grid{
+    grid-template-columns:1fr !important;
+    gap:22px !important;
+  }
+}
+
 </style>
 
 </head>
