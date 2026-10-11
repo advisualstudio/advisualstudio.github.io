@@ -864,11 +864,14 @@ body{
 
 
 /* ===== RESPONSIVE VIDEO RATIOS + REAL THUMBNAIL PREVIEWS ===== */
-.work-card.drive-video-card .thumb{height:auto;aspect-ratio:16/9;position:relative;}
+.work-card.drive-video-card .thumb{height:auto !important;aspect-ratio:16/9;position:relative;overflow:hidden;}
 .work-card.drive-video-card .thumb iframe{position:absolute;inset:0;width:100%;height:100%;}
+/* Reel/vertical format for Motion Graphic, Real Estate, Shorts and Education */
+.work-card.drive-video-card[data-categories="motion-graphic"] .thumb,
+.work-card.drive-video-card[data-categories="real-estate"] .thumb,
 .work-card.drive-video-card[data-categories="shorts"] .thumb,
-.work-card.drive-video-card[data-categories="real-estate"] .thumb{aspect-ratio:9/16;}
-.work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9;}
+.work-card.drive-video-card[data-categories="education"] .thumb{aspect-ratio:9/16;height:auto !important;}
+.work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9;height:auto !important;}
 .drive-preview-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#10140e;z-index:1;transition:transform .35s ease;}
 .drive-player:hover .drive-preview-image{transform:scale(1.025);}
 .drive-play-overlay{z-index:3;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.30));}
@@ -878,13 +881,13 @@ body{
 .design-card a{display:block;width:100%;}
 .design-card img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;}
 .design-card img.image-fallback{object-fit:contain;padding:25px;color:#9ca995;}
-@media(max-width:600px){.work-card.drive-video-card .thumb{aspect-ratio:16/9}.work-card.drive-video-card[data-categories="shorts"] .thumb,.work-card.drive-video-card[data-categories="real-estate"] .thumb{aspect-ratio:9/16}.work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9}}
+@media(max-width:600px){.work-card.drive-video-card .thumb{height:auto !important;aspect-ratio:16/9}.work-card.drive-video-card[data-categories="motion-graphic"] .thumb,.work-card.drive-video-card[data-categories="real-estate"] .thumb,.work-card.drive-video-card[data-categories="shorts"] .thumb,.work-card.drive-video-card[data-categories="education"] .thumb{height:auto !important;aspect-ratio:9/16}.work-card.drive-video-card[data-categories="long-video"] .thumb{height:auto !important;aspect-ratio:16/9}}
 
 /* ===== DRIVE VIDEO PROJECT CARDS ===== */
 .drive-video-card .thumb{position:relative;background:#080b08}
 .drive-video-card .thumb iframe{width:100%;height:100%;display:block;border:0}
 .drive-video-card .work-info{min-height:85px}
-@media(max-width:600px){.drive-video-card .thumb{height:420px}}
+@media(max-width:600px){.drive-video-card .thumb{height:auto !important}}
 
 /* ===== PREMIUM LOCAL VIDEO PROJECT CARDS ===== */
 .video-project .thumb{
@@ -1641,34 +1644,64 @@ loadAdminProjects();
 
 
 <script>
-/* Only one Google Drive portfolio video is loaded at a time. */
+/* Keep exactly one Google Drive portfolio player active. Selecting another card
+   unloads the previous iframe, which stops its playback/audio. */
 (function(){
   const players = Array.from(document.querySelectorAll('.drive-player'));
+  let activePlayer = null;
+
+  function stopPlayer(player){
+    if(!player) return;
+    const frame = player.querySelector('iframe');
+    const overlay = player.querySelector('.drive-play-overlay');
+    player.classList.remove('is-loaded');
+    if(frame){
+      // Navigating away from the Drive player stops playback, not just mutes it.
+      frame.src = 'about:blank';
+      frame.removeAttribute('src');
+    }
+    if(overlay){ overlay.hidden = false; }
+  }
+
   players.forEach(function(player){
     const frame = player.querySelector('iframe');
     const overlay = player.querySelector('.drive-play-overlay');
-    const poster = player.querySelector('.drive-preview-image');
     if(!frame || !overlay) return;
-    frame.addEventListener('load', function(){ if(frame.src && frame.src !== 'about:blank') player.classList.add('is-loaded'); });
-    overlay.addEventListener('click', function(){
+
+    // Start each iframe unloaded so hidden players cannot continue playing.
+    frame.removeAttribute('src');
+    overlay.hidden = false;
+
+    overlay.addEventListener('click', function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      if(activePlayer && activePlayer !== player){
+        stopPlayer(activePlayer);
+      }
+      // Also clear any other player, including one left over after navigation.
       players.forEach(function(other){
-        if(other === player) return;
-        const otherFrame = other.querySelector('iframe');
-        const otherOverlay = other.querySelector('.drive-play-overlay');
-        if(otherFrame){
-          otherFrame.src = 'about:blank';
-          otherFrame.removeAttribute('src');
-        }
-        other.classList.remove('is-loaded');
-        if(otherOverlay) otherOverlay.hidden = false;
+        if(other !== player) stopPlayer(other);
       });
+      activePlayer = player;
       const url = frame.getAttribute('data-src');
       if(url){
-        frame.src = url;
         player.classList.add('is-loaded');
         overlay.hidden = true;
+        frame.src = url;
       }
     });
+  });
+
+  // When the user leaves the portfolio tab/window, unload the active Drive player.
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden && activePlayer){
+      stopPlayer(activePlayer);
+      activePlayer = null;
+    }
+  });
+  window.addEventListener('pagehide', function(){
+    if(activePlayer) stopPlayer(activePlayer);
+    activePlayer = null;
   });
 })();
 </script>
