@@ -1022,6 +1022,71 @@ body{
 @media(max-width:650px){.shelf-steps{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:18px}.shelf-step{padding:20px 15px;min-height:175px}.shelf-step:nth-child(odd){border-right:1px solid rgba(50,105,139,.16)}.shelf-step:nth-child(even){border-right:0}.shelf-step:nth-child(3){border-right:1px solid rgba(50,105,139,.16)}.shelf-step:nth-child(n+3){border-top:1px solid rgba(50,105,139,.16)}.shelf-icon{margin-bottom:18px}.testimonial-grid{grid-template-columns:1fr}.working-shelf .shelf-kicker{margin-top:35px}}
 
 </style>
+
+/* Final theme alignment: Working Shelf matches Ad Visual Studio */
+.working-shelf{
+  background-color:#0b1009 !important;
+  background-image:
+    linear-gradient(rgba(156,255,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(156,255,0,.035) 1px,transparent 1px),
+    radial-gradient(ellipse at 15% 100%,rgba(156,255,0,.055),transparent 42%) !important;
+  background-size:52px 52px,52px 52px,auto !important;
+  color:#f4f5ef !important;
+}
+.working-shelf .shelf-script{color:var(--yellow,#ffc400) !important}
+.working-shelf h2{
+  background:linear-gradient(180deg,#fffdf5 15%,#d8ddd1 92%) !important;
+  -webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;
+}
+.working-shelf .shelf-kicker,.working-shelf .shelf-loop{color:#929b8b !important}
+.shelf-steps{border-color:rgba(156,255,0,.2) !important;background:rgba(13,20,10,.94) !important}
+.shelf-step,.shelf-step:nth-child(even){background:rgba(16,25,12,.92) !important;border-color:rgba(156,255,0,.1) !important}
+.shelf-icon{border-color:rgba(156,255,0,.35) !important;color:var(--green,#9cff00) !important;background:#17220f !important;box-shadow:inset 0 0 18px rgba(156,255,0,.05) !important}
+.shelf-step h3{color:#f3f4ec !important}
+.shelf-step p{color:#9aa393 !important}
+.shelf-num{color:rgba(156,255,0,.09) !important}
+.shelf-loop:before{color:var(--green,#9cff00) !important}
+.shelf-loop:after{background:linear-gradient(90deg,rgba(156,255,0,.7),rgba(255,196,0,.35)) !important}
+
+/* WATCH MY BEST WORK: vertical Reels format (9:16) */
+.reel-section .motion-best-grid,
+.reel-section .reel-grid.motion-best-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:28px !important;
+  align-items:start !important;
+}
+.reel-section .motion-best-card{width:100%;min-width:0;max-width:520px;justify-self:center}
+.reel-section .motion-best-card .thumb,
+.reel-section .motion-best-grid .reel .thumb,
+.reel-section .motion-best-card .drive-player{
+  position:relative !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:9/16 !important;
+  max-height:none !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  border-radius:16px !important;
+  background:#10170d !important;
+}
+.reel-section .motion-best-card .thumb iframe,
+.reel-section .motion-best-card .thumb video,
+.reel-section .motion-best-card .thumb img,
+.reel-section .motion-best-card .thumb .drive-preview-image{
+  position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;
+  object-fit:cover !important;border:0 !important;
+}
+.reel-section .motion-best-card .thumb iframe{z-index:2}
+.reel-section .motion-best-card .thumb .drive-preview-image{z-index:1}
+.reel-section .motion-best-card .thumb .drive-play-overlay{z-index:3}
+.reel-section .motion-best-card h3{margin-top:14px}
+@media(max-width:700px){
+ .reel-section .motion-best-grid,.reel-section .reel-grid.motion-best-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+ .reel-section .motion-best-card .thumb{aspect-ratio:9/16 !important;border-radius:12px !important}
+ .reel-section .motion-best-card h3{font-size:14px}
+}
+
 </head>
 
 <body>
