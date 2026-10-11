@@ -866,11 +866,12 @@ body{
 /* ===== RESPONSIVE VIDEO RATIOS + REAL THUMBNAIL PREVIEWS ===== */
 .work-card.drive-video-card .thumb{height:auto !important;aspect-ratio:16/9;position:relative;overflow:hidden;}
 .work-card.drive-video-card .thumb iframe{position:absolute;inset:0;width:100%;height:100%;}
-/* Reel/vertical format for Motion Graphic, Real Estate, Shorts and Education */
+/* Reel/vertical format for Motion Graphic, Real Estate, Shorts, Education and AI Video */
 .work-card.drive-video-card[data-categories="motion-graphic"] .thumb,
 .work-card.drive-video-card[data-categories="real-estate"] .thumb,
 .work-card.drive-video-card[data-categories="shorts"] .thumb,
 .work-card.drive-video-card[data-categories="education"] .thumb{aspect-ratio:9/16;height:auto !important;}
+.work-card.drive-video-card[data-categories="ai-video"] .thumb{aspect-ratio:9/16;height:auto !important;}
 .work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9;height:auto !important;}
 .drive-preview-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#10140e;z-index:1;transition:transform .35s ease;}
 .drive-player:hover .drive-preview-image{transform:scale(1.025);}
@@ -966,6 +967,42 @@ body{
   .video-project .video-play{width:56px;height:56px}
 }
 
+
+/* Motion graphics featured in WATCH MY BEST WORK */
+.motion-best-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.motion-best-card{min-width:0}
+.motion-best-card .thumb{width:100%;aspect-ratio:9/16;max-height:680px;border-radius:16px;overflow:hidden;position:relative;background:#0b1009}
+.motion-best-card .thumb iframe,.motion-best-card .thumb .drive-preview-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.motion-best-card h3{margin:14px 0 0;font-size:18px}
+@media(max-width:700px){.motion-best-grid{grid-template-columns:1fr}.motion-best-card .thumb{max-height:620px}}
+
+
+/* WORKING SHELF — process loop */
+.working-shelf{background:#050912;color:#edf5ff;position:relative;overflow:hidden;background-image:linear-gradient(rgba(92,137,177,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(92,137,177,.075) 1px,transparent 1px),radial-gradient(ellipse at 15% 100%,rgba(0,166,224,.13),transparent 42%);background-size:52px 52px,52px 52px,auto}
+.working-shelf .shelf-head{text-align:center;margin:0 auto 56px;max-width:1100px}
+.working-shelf .shelf-script{font-family:Georgia,serif;font-style:italic;color:#9cddff;font-size:clamp(18px,2.1vw,30px);margin-bottom:12px}
+.working-shelf h2{font-size:clamp(42px,7.5vw,104px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase;font-weight:900;background:linear-gradient(180deg,#fff 20%,#a7b8cc 90%);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0}
+.working-shelf .shelf-kicker{margin-top:56px;color:#62768e;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.shelf-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid #294457;border-radius:24px;overflow:hidden;background:rgba(8,20,33,.92);box-shadow:0 18px 55px rgba(0,0,0,.22)}
+.shelf-step{position:relative;min-height:190px;padding:28px 22px 24px;border-right:1px solid rgba(50,105,139,.16);background:rgba(8,18,31,.36)}
+.shelf-step:nth-child(even){background:rgba(15,37,54,.42)}.shelf-step:last-child{border-right:0}
+.shelf-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid #145b7c;border-radius:13px;color:#2bbdf4;background:#0b2638;font-size:22px;margin-bottom:25px;box-shadow:inset 0 0 18px rgba(39,176,230,.06)}
+.shelf-step h3{font-size:clamp(14px,1.3vw,21px);letter-spacing:.03em;margin:0 0 10px;color:#f3f7fb}
+.shelf-step p{font-size:14px;line-height:1.55;color:#8292a6;max-width:130px;margin:0}
+.shelf-num{position:absolute;right:12px;bottom:-9px;font-size:clamp(42px,4vw,66px);font-weight:900;color:rgba(25,69,104,.22);line-height:1}
+.shelf-loop{display:flex;align-items:center;gap:12px;margin-top:24px;color:#61788f;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.shelf-loop:before{content:'←';color:#24b9f0;font-size:26px;line-height:1}.shelf-loop:after{content:'';height:2px;flex:1;background:linear-gradient(90deg,#1683b1,#0c3b53);border-radius:3px}
+/* Testimonials */
+.testimonials{background:linear-gradient(180deg,#0b1009,#0e160d)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.testimonial-card{border:1px solid var(--line);border-radius:16px;padding:23px;background:rgba(17,25,15,.9);min-width:0;transition:transform .25s,border-color .25s}
+.testimonial-card:hover{transform:translateY(-4px);border-color:rgba(156,255,0,.4)}
+.testimonial-top{display:flex;align-items:center;gap:12px;margin-bottom:17px}
+.testimonial-avatar{width:44px;height:44px;flex:0 0 44px;border-radius:50%;display:grid;place-items:center;background:#1b2b16;color:#b5ff52;font-weight:900;border:1px solid rgba(156,255,0,.22)}
+.testimonial-name{font-size:14px;font-weight:800;color:#f2f4ed}.testimonial-role{font-size:11px;color:#8b9785;margin-top:4px}.testimonial-quote{font-size:13px;line-height:1.8;color:#c2cbbb;margin:0}.testimonial-mark{margin-left:auto;color:var(--green);font-size:26px;opacity:.85}
+@media(max-width:900px){.shelf-steps{grid-template-columns:repeat(3,minmax(0,1fr))}.shelf-step:nth-child(3){border-right:0}.shelf-step:nth-child(4){border-right:1px solid rgba(50,105,139,.16)}.shelf-step:nth-child(n+4){border-top:1px solid rgba(50,105,139,.16)}}
+@media(max-width:650px){.shelf-steps{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:18px}.shelf-step{padding:20px 15px;min-height:175px}.shelf-step:nth-child(odd){border-right:1px solid rgba(50,105,139,.16)}.shelf-step:nth-child(even){border-right:0}.shelf-step:nth-child(3){border-right:1px solid rgba(50,105,139,.16)}.shelf-step:nth-child(n+3){border-top:1px solid rgba(50,105,139,.16)}.shelf-icon{margin-bottom:18px}.testimonial-grid{grid-template-columns:1fr}.working-shelf .shelf-kicker{margin-top:35px}}
+
 </style>
 </head>
 
@@ -980,6 +1017,8 @@ body{
       <a href="#services">Services</a>
       <a href="#work">Projects</a>
       <a href="#designs">Designs</a>
+      <a href="#working-shelf">Process</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="nav-cta" href="https://wa.me/919369847401" target="_blank" rel="noopener">Hire Me ↗</a>
@@ -1063,10 +1102,44 @@ body{
       <p>A glimpse into my editing style — attention-first pacing, clean transitions, motion graphics, educational storytelling and polished visual finishing.</p>
     </div>
 
-    <div class="reel-grid">
-      <div class="reel"><iframe src="https://www.youtube.com/embed/1L1OF53MxJQ" title="Gagan Gautam Best Work 1" allowfullscreen></iframe></div>
-      <div class="reel"><iframe src="https://www.youtube.com/embed/k0K7cMCulns" title="Gagan Gautam Best Work 2" allowfullscreen></iframe></div>
+    <div class="reel-grid motion-best-grid">
+      <div class="reel motion-best-card">
+        <div class="thumb drive-player" data-video-title="Motion Graphic Project 01">
+          <img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=17pmTeLZamsqf8RWoMPija63vkDk2jZnN&amp;sz=w1200" alt="Preview: Motion Graphic Project 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=17pmTeLZamsqf8RWoMPija63vkDk2jZnN&amp;sz=w1600'">
+          <iframe data-src="https://drive.google.com/file/d/17pmTeLZamsqf8RWoMPija63vkDk2jZnN/preview" title="Motion Graphic Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <button class="drive-play-overlay" type="button" aria-label="Play Motion Graphic Project 01"><span>▶</span><small>PLAY VIDEO</small></button>
+        </div>
+        <h3>Motion Graphic Project 01</h3>
+      </div>
+      <div class="reel motion-best-card">
+        <div class="thumb drive-player" data-video-title="Motion Graphic Project 02">
+          <img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI&amp;sz=w1200" alt="Preview: Motion Graphic Project 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI&amp;sz=w1600'">
+          <iframe data-src="https://drive.google.com/file/d/1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI/preview" title="Motion Graphic Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <button class="drive-play-overlay" type="button" aria-label="Play Motion Graphic Project 02"><span>▶</span><small>PLAY VIDEO</small></button>
+        </div>
+        <h3>Motion Graphic Project 02</h3>
+      </div>
     </div>
+  </div>
+</section>
+
+
+<section class="section working-shelf" id="working-shelf">
+  <div class="container">
+    <div class="shelf-head">
+      <div class="shelf-script">Masterpiece Selected</div>
+      <h2>Working Shelf</h2>
+      <div class="shelf-kicker">How I Think</div>
+    </div>
+    <div class="shelf-steps">
+      <article class="shelf-step"><div class="shelf-icon">⌕</div><h3>DIG IN</h3><p>Users, data, competitors</p><span class="shelf-num">01</span></article>
+      <article class="shelf-step"><div class="shelf-icon">⊙</div><h3>FOCUS</h3><p>The problem worth solving</p><span class="shelf-num">02</span></article>
+      <article class="shelf-step"><div class="shelf-icon">♧</div><h3>DESIGN</h3><p>Flows, UI, systems</p><span class="shelf-num">03</span></article>
+      <article class="shelf-step"><div class="shelf-icon">♜</div><h3>TEST</h3><p>QA test, usability test</p><span class="shelf-num">04</span></article>
+      <article class="shelf-step"><div class="shelf-icon">↗</div><h3>SHIP</h3><p>Built with engineers</p><span class="shelf-num">05</span></article>
+      <article class="shelf-step"><div class="shelf-icon">⟳</div><h3>LEARN</h3><p>Watch, adjust, repeat</p><span class="shelf-num">06</span></article>
+    </div>
+    <div class="shelf-loop"><span>And Back Again</span></div>
   </div>
 </section>
 
@@ -1086,6 +1159,7 @@ body{
       <button class="filter-btn" type="button" data-filter="real-estate">REAL ESTATE</button>
       <button class="filter-btn" type="button" data-filter="shorts">SHORTS</button>
       <button class="filter-btn" type="button" data-filter="education">EDUCATION</button>
+      <button class="filter-btn" type="button" data-filter="ai-video">AI VIDEO</button>
       <button class="filter-btn" type="button" data-filter="long-video">LONG VIDEO</button>
       <button class="filter-btn" type="button" data-filter="posters">POSTER</button>
       <button class="filter-btn" type="button" data-filter="banners">BANNER</button>
@@ -1133,6 +1207,16 @@ body{
         <div class="work-info"><div><h3>Education Video 02</h3><p>Educational Content • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
       </article>
 
+      <article class="work-card drive-video-card" data-categories="ai-video">
+        <div class="thumb drive-player" data-video-title="AI Video 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=12VCZ0fFEkaYmpOgjAH65CGTAvgEySOzJ&amp;sz=w1200" alt="Preview: AI Video 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=12VCZ0fFEkaYmpOgjAH65CGTAvgEySOzJ&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/12VCZ0fFEkaYmpOgjAH65CGTAvgEySOzJ/preview" title="AI Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load AI Video 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
+        <div class="work-info"><div><h3>AI Video 01</h3><p>AI Video • Visual Storytelling • Editing</p></div><span class="arrow">▶</span></div>
+      </article>
+
+      <article class="work-card drive-video-card" data-categories="ai-video">
+        <div class="thumb drive-player" data-video-title="AI Video 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1VZdywCDfndIVIs2cYbihqdP4PYZ2FiUd&amp;sz=w1200" alt="Preview: AI Video 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1VZdywCDfndIVIs2cYbihqdP4PYZ2FiUd&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1VZdywCDfndIVIs2cYbihqdP4PYZ2FiUd/preview" title="AI Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load AI Video 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
+        <div class="work-info"><div><h3>AI Video 02</h3><p>AI Video • Visual Storytelling • Editing</p></div><span class="arrow">▶</span></div>
+      </article>
+
       <article class="work-card drive-video-card" data-categories="long-video">
         <div class="thumb drive-player" data-video-title="Long Video Project 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY&amp;sz=w1200" alt="Preview: Long Video Project 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY/preview" title="Long Video Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Long Video Project 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Long Video Project 01</h3><p>Long-form Video • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
@@ -1144,6 +1228,34 @@ body{
       </article>
     </div>
     <div class="filter-empty" id="filterEmpty">No projects in this category yet — more work coming soon.</div>
+  </div>
+</section>
+
+<section class="section designs" id="designs">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">07 / Posters & Banners</div>
+        <h2>DESIGN <em>WORK.</em></h2>
+      </div>
+      <p>Poster and banner designs created for education, promotions, social media and digital campaigns.</p>
+    </div>
+
+    <div class="design-category" id="posterCategory">
+      <div class="design-title"><div class="section-kicker">POSTERS</div></div>
+      <div class="design-grid">
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0&amp;sz=w1600" alt="Poster Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI&amp;sz=w1600" alt="Poster Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz&amp;sz=w1600" alt="Poster Design 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz\'"></div>
+      </div>
+    </div>
+    <div class="design-category" id="bannerCategory">
+      <div class="design-title"><div class="section-kicker">BANNERS</div></div>
+      <div class="design-grid">
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw&amp;sz=w1600" alt="Banner Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB&amp;sz=w1600" alt="Banner Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB\'"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1228,33 +1340,7 @@ body{
   </div>
 </section>
 
-<section class="section designs" id="designs">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-kicker">07 / Posters & Banners</div>
-        <h2>DESIGN <em>WORK.</em></h2>
-      </div>
-      <p>Poster and banner designs created for education, promotions, social media and digital campaigns.</p>
-    </div>
 
-    <div class="design-category" id="posterCategory">
-      <div class="design-title"><div class="section-kicker">POSTERS</div></div>
-      <div class="design-grid">
-        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0&amp;sz=w1600" alt="Poster Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0\'"></div>
-        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI&amp;sz=w1600" alt="Poster Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI\'"></div>
-        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz&amp;sz=w1600" alt="Poster Design 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz\'"></div>
-      </div>
-    </div>
-    <div class="design-category" id="bannerCategory">
-      <div class="design-title"><div class="section-kicker">BANNERS</div></div>
-      <div class="design-grid">
-        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw&amp;sz=w1600" alt="Banner Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw\'"></div>
-        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB&amp;sz=w1600" alt="Banner Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB\'"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section skills" id="skills">
   <div class="container">
@@ -1338,6 +1424,23 @@ body{
   </div>
 </section>
 
+
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-top">
+      <div><div class="section-kicker">08 / Testimonials</div><h2>FROM THE PEOPLE<br><em>I’VE BUILT WITH.</em></h2></div>
+      <p>Kind words from collaborators and clients across India. These are sample quotes; replace them with approved, genuine client feedback before publishing.</p>
+    </div>
+    <div class="testimonial-grid">
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">RK</div><div><div class="testimonial-name">Rahul Kapoor</div><div class="testimonial-role">Brand Owner · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">The motion graphics turned our brand idea into something eye-catching. The animations were clean, professional, and delivered on time.</p></article>
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">PS</div><div><div class="testimonial-name">Priya Sharma</div><div class="testimonial-role">Digital Marketing · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">Creative thinking, smooth communication, and great attention to detail. The final videos matched the style we wanted for our campaign.</p></article>
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">AV</div><div><div class="testimonial-name">Amit Verma</div><div class="testimonial-role">Real Estate Consultant · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">The property videos looked polished and engaging. The editing highlighted the key features and gave our project a premium feel.</p></article>
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">NS</div><div><div class="testimonial-name">Neha Singh</div><div class="testimonial-role">Content Creator · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">The short-form edits had great pacing, smooth transitions, and strong visual appeal. Exactly the kind of content we wanted for social media.</p></article>
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">VS</div><div><div class="testimonial-name">Vikram Saini</div><div class="testimonial-role">Business Owner · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">The posters and banners were visually consistent and professionally designed. The overall quality made our brand presentation look much stronger.</p></article>
+      <article class="testimonial-card"><div class="testimonial-top"><div class="testimonial-avatar">AK</div><div><div class="testimonial-name">Ankit Kumar</div><div class="testimonial-role">YouTube Creator · India</div></div><span class="testimonial-mark">“</span></div><p class="testimonial-quote">The editing kept the content engaging without making it feel overloaded. Great understanding of timing, storytelling, and visual presentation.</p></article>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -1644,8 +1747,9 @@ loadAdminProjects();
 
 
 <script>
-/* Keep exactly one Google Drive portfolio player active. Selecting another card
-   unloads the previous iframe, which stops its playback/audio. */
+/* Hover-to-preview for Google Drive portfolio videos.
+   Only one player is loaded at a time; leaving a card or hovering another card
+   unloads the previous iframe so its playback/audio stops. */
 (function(){
   const players = Array.from(document.querySelectorAll('.drive-player'));
   let activePlayer = null;
@@ -1656,52 +1760,56 @@ loadAdminProjects();
     const overlay = player.querySelector('.drive-play-overlay');
     player.classList.remove('is-loaded');
     if(frame){
-      // Navigating away from the Drive player stops playback, not just mutes it.
       frame.src = 'about:blank';
       frame.removeAttribute('src');
     }
-    if(overlay){ overlay.hidden = false; }
+    if(overlay) overlay.hidden = false;
+    if(activePlayer === player) activePlayer = null;
+  }
+
+  function playPlayer(player){
+    const frame = player.querySelector('iframe');
+    const overlay = player.querySelector('.drive-play-overlay');
+    if(!frame) return;
+    if(activePlayer && activePlayer !== player) stopPlayer(activePlayer);
+    players.forEach(function(other){ if(other !== player) stopPlayer(other); });
+    activePlayer = player;
+    const baseUrl = frame.getAttribute('data-src');
+    if(baseUrl && !player.classList.contains('is-loaded')){
+      player.classList.add('is-loaded');
+      if(overlay) overlay.hidden = true;
+      frame.src = baseUrl + (baseUrl.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
+    }
   }
 
   players.forEach(function(player){
     const frame = player.querySelector('iframe');
     const overlay = player.querySelector('.drive-play-overlay');
-    if(!frame || !overlay) return;
-
-    // Start each iframe unloaded so hidden players cannot continue playing.
+    if(!frame) return;
     frame.removeAttribute('src');
-    overlay.hidden = false;
+    if(overlay) overlay.hidden = false;
 
-    overlay.addEventListener('click', function(event){
-      event.preventDefault();
-      event.stopPropagation();
-      if(activePlayer && activePlayer !== player){
-        stopPlayer(activePlayer);
-      }
-      // Also clear any other player, including one left over after navigation.
-      players.forEach(function(other){
-        if(other !== player) stopPlayer(other);
+    // Start preview as soon as the pointer enters the video card.
+    player.addEventListener('mouseenter', function(){ playPlayer(player); });
+    player.addEventListener('focusin', function(){ playPlayer(player); });
+    // Stop it when the pointer leaves, keeping the page from playing multiple videos.
+    player.addEventListener('mouseleave', function(){ stopPlayer(player); });
+
+    // Touchscreens have no hover, so tap still starts the preview.
+    if(overlay){
+      overlay.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        playPlayer(player);
       });
-      activePlayer = player;
-      const url = frame.getAttribute('data-src');
-      if(url){
-        player.classList.add('is-loaded');
-        overlay.hidden = true;
-        frame.src = url;
-      }
-    });
+    }
   });
 
-  // When the user leaves the portfolio tab/window, unload the active Drive player.
   document.addEventListener('visibilitychange', function(){
-    if(document.hidden && activePlayer){
-      stopPlayer(activePlayer);
-      activePlayer = null;
-    }
+    if(document.hidden && activePlayer) stopPlayer(activePlayer);
   });
   window.addEventListener('pagehide', function(){
     if(activePlayer) stopPlayer(activePlayer);
-    activePlayer = null;
   });
 })();
 </script>
