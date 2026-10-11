@@ -851,6 +851,35 @@ body{
 }
 
 
+/* ===== SINGLE-ACTIVE DRIVE VIDEO PLAYER ===== */
+.drive-player{position:relative;isolation:isolate;background:#080b08}
+.drive-player iframe{width:100%;height:100%;display:block;border:0;background:#080b08}
+.drive-play-overlay{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%;height:100%;border:0;cursor:pointer;color:#f6f7f2;background:radial-gradient(ellipse at center,rgba(156,255,0,.12),rgba(7,9,7,.88) 72%);transition:background .25s ease}
+.drive-play-overlay span{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;padding-left:5px;background:var(--green);color:#0a0d08;font-size:25px;box-shadow:0 0 0 10px rgba(156,255,0,.10),0 12px 35px rgba(0,0,0,.4)}
+.drive-play-overlay small{font-size:10px;font-weight:800;letter-spacing:.16em;color:#fff}
+.drive-play-overlay:hover{background:radial-gradient(ellipse at center,rgba(156,255,0,.2),rgba(7,9,7,.78) 72%)}
+.drive-play-overlay:hover span{transform:scale(1.07)}
+.drive-player.is-loaded .drive-play-overlay{display:none}
+@media(max-width:600px){.drive-play-overlay span{width:60px;height:60px}}
+
+
+/* ===== RESPONSIVE VIDEO RATIOS + REAL THUMBNAIL PREVIEWS ===== */
+.work-card.drive-video-card .thumb{height:auto;aspect-ratio:16/9;position:relative;}
+.work-card.drive-video-card .thumb iframe{position:absolute;inset:0;width:100%;height:100%;}
+.work-card.drive-video-card[data-categories="shorts"] .thumb,
+.work-card.drive-video-card[data-categories="real-estate"] .thumb{aspect-ratio:9/16;}
+.work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9;}
+.drive-preview-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:#10140e;z-index:1;transition:transform .35s ease;}
+.drive-player:hover .drive-preview-image{transform:scale(1.025);}
+.drive-play-overlay{z-index:3;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.30));}
+.drive-play-overlay span{background:var(--green);color:#0a0d08;}
+.drive-player.is-loaded .drive-preview-image{display:none;}
+.design-card{min-height:160px;display:flex;align-items:center;justify-content:center;}
+.design-card a{display:block;width:100%;}
+.design-card img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;}
+.design-card img.image-fallback{object-fit:contain;padding:25px;color:#9ca995;}
+@media(max-width:600px){.work-card.drive-video-card .thumb{aspect-ratio:16/9}.work-card.drive-video-card[data-categories="shorts"] .thumb,.work-card.drive-video-card[data-categories="real-estate"] .thumb{aspect-ratio:9/16}.work-card.drive-video-card[data-categories="long-video"] .thumb{aspect-ratio:16/9}}
+
 /* ===== DRIVE VIDEO PROJECT CARDS ===== */
 .drive-video-card .thumb{position:relative;background:#080b08}
 .drive-video-card .thumb iframe{width:100%;height:100%;display:block;border:0}
@@ -1062,52 +1091,52 @@ body{
     <div class="work-grid" id="workGrid">
 
       <article class="work-card drive-video-card" data-categories="motion-graphic">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/17pmTeLZamsqf8RWoMPija63vkDk2jZnN/preview" title="Motion Graphic Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Motion Graphic Project 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=17pmTeLZamsqf8RWoMPija63vkDk2jZnN&amp;sz=w1200" alt="Preview: Motion Graphic Project 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=17pmTeLZamsqf8RWoMPija63vkDk2jZnN&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/17pmTeLZamsqf8RWoMPija63vkDk2jZnN/preview" title="Motion Graphic Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Motion Graphic Project 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Motion Graphic Project 01</h3><p>Motion Graphic • Animation • Visual Effects</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="motion-graphic">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI/preview" title="Motion Graphic Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Motion Graphic Project 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI&amp;sz=w1200" alt="Preview: Motion Graphic Project 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1KMEc8a6bs6Y3K9SiqZd9Rgp9jvFZdPwI/preview" title="Motion Graphic Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Motion Graphic Project 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Motion Graphic Project 02</h3><p>Motion Graphic • Animation • Visual Effects</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="real-estate">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1yfAH_MTcPRiVmFqMjLwWBSgsUapUt_17/preview" title="Real Estate Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Real Estate Video 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1yfAH_MTcPRiVmFqMjLwWBSgsUapUt_17&amp;sz=w1200" alt="Preview: Real Estate Video 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1yfAH_MTcPRiVmFqMjLwWBSgsUapUt_17&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1yfAH_MTcPRiVmFqMjLwWBSgsUapUt_17/preview" title="Real Estate Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Real Estate Video 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Real Estate Video 01</h3><p>Real Estate • Property Showcase • Video Editing</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="real-estate">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1FMZzwSNu0v8iHY-Lo5SRD0dTk-1wOEEp/preview" title="Real Estate Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Real Estate Video 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1FMZzwSNu0v8iHY-Lo5SRD0dTk-1wOEEp&amp;sz=w1200" alt="Preview: Real Estate Video 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1FMZzwSNu0v8iHY-Lo5SRD0dTk-1wOEEp&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1FMZzwSNu0v8iHY-Lo5SRD0dTk-1wOEEp/preview" title="Real Estate Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Real Estate Video 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Real Estate Video 02</h3><p>Real Estate • Property Showcase • Video Editing</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="shorts">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1bpePnugCeSR47ExRLAt1F_-VhChKitdN/preview" title="Shorts Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Shorts Project 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1bpePnugCeSR47ExRLAt1F_-VhChKitdN&amp;sz=w1200" alt="Preview: Shorts Project 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1bpePnugCeSR47ExRLAt1F_-VhChKitdN&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1bpePnugCeSR47ExRLAt1F_-VhChKitdN/preview" title="Shorts Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Shorts Project 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Shorts Project 01</h3><p>Short-form Video • Social Media • Editing</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="shorts">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/173zXYySLEG4xambzPvwpb5CO4TlX26-a/preview" title="Shorts Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Shorts Project 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=173zXYySLEG4xambzPvwpb5CO4TlX26-a&amp;sz=w1200" alt="Preview: Shorts Project 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=173zXYySLEG4xambzPvwpb5CO4TlX26-a&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/173zXYySLEG4xambzPvwpb5CO4TlX26-a/preview" title="Shorts Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Shorts Project 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Shorts Project 02</h3><p>Short-form Video • Social Media • Editing</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="education">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1voGOBxhPtPDK2e9IHbgDxor0BDeHdVO_/preview" title="Education Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Education Video 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1voGOBxhPtPDK2e9IHbgDxor0BDeHdVO_&amp;sz=w1200" alt="Preview: Education Video 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1voGOBxhPtPDK2e9IHbgDxor0BDeHdVO_&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1voGOBxhPtPDK2e9IHbgDxor0BDeHdVO_/preview" title="Education Video 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Education Video 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Education Video 01</h3><p>Educational Content • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="education">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/16v1KyFqiBc0pwKFWvxwJnZwHqzcBF9c1/preview" title="Education Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Education Video 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=16v1KyFqiBc0pwKFWvxwJnZwHqzcBF9c1&amp;sz=w1200" alt="Preview: Education Video 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=16v1KyFqiBc0pwKFWvxwJnZwHqzcBF9c1&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/16v1KyFqiBc0pwKFWvxwJnZwHqzcBF9c1/preview" title="Education Video 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Education Video 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Education Video 02</h3><p>Educational Content • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="long-video">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY/preview" title="Long Video Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Long Video Project 01"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY&amp;sz=w1200" alt="Preview: Long Video Project 01" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/1O73M0IaZTWhwg3XRlpFiBQyFrpH0g9zY/preview" title="Long Video Project 01" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Long Video Project 01 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Long Video Project 01</h3><p>Long-form Video • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
       </article>
 
       <article class="work-card drive-video-card" data-categories="long-video">
-        <div class="thumb"><iframe src="https://drive.google.com/file/d/15eyMJ-cAEdVZkZ6NP85yg5OywIIFAF7l/preview" title="Long Video Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="thumb drive-player" data-video-title="Long Video Project 02"><img class="drive-preview-image" src="https://drive.google.com/thumbnail?id=15eyMJ-cAEdVZkZ6NP85yg5OywIIFAF7l&amp;sz=w1200" alt="Preview: Long Video Project 02" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=15eyMJ-cAEdVZkZ6NP85yg5OywIIFAF7l&amp;sz=w1600'"><iframe data-src="https://drive.google.com/file/d/15eyMJ-cAEdVZkZ6NP85yg5OywIIFAF7l/preview" title="Long Video Project 02" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><button class="drive-play-overlay" type="button" aria-label="Load Long Video Project 02 video"><span>▶</span><small>PLAY VIDEO</small></button></div>
         <div class="work-info"><div><h3>Long Video Project 02</h3><p>Long-form Video • Editing • Storytelling</p></div><span class="arrow">▶</span></div>
       </article>
     </div>
@@ -1209,16 +1238,16 @@ body{
     <div class="design-category" id="posterCategory">
       <div class="design-title"><div class="section-kicker">POSTERS</div></div>
       <div class="design-grid">
-        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0" alt="Poster Design 1" loading="lazy"></div>
-        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI" alt="Poster Design 2" loading="lazy"></div>
-        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz" alt="Poster Design 3" loading="lazy"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0&amp;sz=w1600" alt="Poster Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1wjR6iGJkBU8wpvtRbCuOBO1LYX5rsEg0\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI&amp;sz=w1600" alt="Poster Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=19_c9cwCpuQMOLV8YBO6KGlXHR3l6UXhI\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz&amp;sz=w1600" alt="Poster Design 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1rjLp8xq_oX7sAf_x2aY4YmKwu4s13dMz\'"></div>
       </div>
     </div>
     <div class="design-category" id="bannerCategory">
       <div class="design-title"><div class="section-kicker">BANNERS</div></div>
       <div class="design-grid">
-        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw" alt="Banner Design 1" loading="lazy"></div>
-        <div class="design-card"><img src="https://drive.google.com/uc?export=view&id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB" alt="Banner Design 2" loading="lazy"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw&amp;sz=w1600" alt="Banner Design 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1cGAntKFSXcDMLZxKBhRd4PYDpJErMPhw\'"></div>
+        <div class="design-card"><img src="https://drive.google.com/thumbnail?id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB&amp;sz=w1600" alt="Banner Design 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=\'https://drive.google.com/uc?export=view&amp;id=1J_oozT3z5I_NTTmMt1Lq9RlAbQDPBggB\'"></div>
       </div>
     </div>
   </div>
@@ -1605,6 +1634,40 @@ loadAdminProjects();
       card.classList.remove('is-playing');
       button.textContent = '▶';
       video.currentTime = 0;
+    });
+  });
+})();
+</script>
+
+
+<script>
+/* Only one Google Drive portfolio video is loaded at a time. */
+(function(){
+  const players = Array.from(document.querySelectorAll('.drive-player'));
+  players.forEach(function(player){
+    const frame = player.querySelector('iframe');
+    const overlay = player.querySelector('.drive-play-overlay');
+    const poster = player.querySelector('.drive-preview-image');
+    if(!frame || !overlay) return;
+    frame.addEventListener('load', function(){ if(frame.src && frame.src !== 'about:blank') player.classList.add('is-loaded'); });
+    overlay.addEventListener('click', function(){
+      players.forEach(function(other){
+        if(other === player) return;
+        const otherFrame = other.querySelector('iframe');
+        const otherOverlay = other.querySelector('.drive-play-overlay');
+        if(otherFrame){
+          otherFrame.src = 'about:blank';
+          otherFrame.removeAttribute('src');
+        }
+        other.classList.remove('is-loaded');
+        if(otherOverlay) otherOverlay.hidden = false;
+      });
+      const url = frame.getAttribute('data-src');
+      if(url){
+        frame.src = url;
+        player.classList.add('is-loaded');
+        overlay.hidden = true;
+      }
     });
   });
 })();
