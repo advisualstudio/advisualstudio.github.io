@@ -886,6 +886,25 @@ body{
 .design-card img.image-fallback{object-fit:contain;padding:25px;color:#9ca995;}
 @media(max-width:600px){.work-card.drive-video-card .thumb{height:auto !important;aspect-ratio:16/9}.work-card.drive-video-card[data-categories="motion-graphic"] .thumb,.work-card.drive-video-card[data-categories="real-estate"] .thumb,.work-card.drive-video-card[data-categories="shorts"] .thumb,.work-card.drive-video-card[data-categories="education"] .thumb{height:auto !important;aspect-ratio:9/16}.work-card.drive-video-card[data-categories="long-video"] .thumb{height:auto !important;aspect-ratio:16/9}}
 
+/* ===== PREMIUM REAL-FRAME THUMBNAILS — ADVISUAL STUDIO ===== */
+.drive-video-card .drive-player{isolation:isolate;border:1px solid rgba(156,255,0,.48);border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.32),inset 0 0 0 1px rgba(255,255,255,.05);background:#050705}
+.drive-video-card .drive-preview-image{filter:saturate(1.04) contrast(1.03);transition:transform .45s ease,filter .45s ease}
+.drive-video-card .drive-player::before{content:"ADVISUAL  /  STUDIO";position:absolute;z-index:4;top:12px;left:12px;padding:6px 9px;border:1px solid rgba(156,255,0,.55);border-radius:5px;background:rgba(3,7,3,.78);backdrop-filter:blur(8px);color:#f7fff1;font:800 9px/1.2 Arial,sans-serif;letter-spacing:.12em;text-shadow:0 1px 8px #000;pointer-events:none}
+.drive-video-card .drive-player::after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:34%;padding:0 13px 13px;display:flex;align-items:flex-end;box-sizing:border-box;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.20) 65%,transparent);color:#b7ff54;font:900 11px/1 Arial,sans-serif;letter-spacing:.14em;pointer-events:none}
+.drive-video-card[data-categories="motion-graphic"] .drive-player::after{content:"MOTION GRAPHICS"}
+.drive-video-card[data-categories="real-estate"] .drive-player::after{content:"REAL ESTATE FILMS"}
+.drive-video-card[data-categories="shorts"] .drive-player::after{content:"SHORTS  /  REELS"}
+.drive-video-card[data-categories="education"] .drive-player::after{content:"EDUCATION"}
+.drive-video-card[data-categories="ai-video"] .drive-player::after{content:"AI VIDEO"}
+.drive-video-card[data-categories="long-video"] .drive-player::after{content:"LONG-FORM EDITING"}
+.drive-video-card .drive-player:hover{border-color:#9cff00;box-shadow:0 0 0 1px rgba(156,255,0,.2),0 14px 38px rgba(0,0,0,.48)}
+.drive-video-card .drive-player:hover .drive-preview-image{transform:scale(1.035);filter:saturate(1.12) contrast(1.05)}
+.drive-video-card .drive-play-overlay{background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.10) 40%,rgba(0,0,0,.26));}
+.drive-video-card .drive-play-overlay span{width:58px;height:58px;border:1px solid rgba(255,255,255,.65);box-shadow:0 0 0 7px rgba(156,255,0,.10),0 8px 28px rgba(0,0,0,.45)}
+.drive-video-card .drive-play-overlay small{padding:7px 10px;border-radius:4px;background:rgba(0,0,0,.55);letter-spacing:.18em}
+.drive-video-card .drive-player.is-loaded::before,.drive-video-card .drive-player.is-loaded::after{display:none}
+@media(max-width:600px){.drive-video-card .drive-player::before{top:8px;left:8px;padding:5px 7px;font-size:8px}.drive-video-card .drive-player::after{padding:0 10px 10px;font-size:9px}.drive-video-card .drive-play-overlay span{width:48px;height:48px}}
+
 /* ===== DRIVE VIDEO PROJECT CARDS ===== */
 .drive-video-card .thumb{position:relative;background:#080b08}
 .drive-video-card .thumb iframe{width:100%;height:100%;display:block;border:0}
