@@ -1165,6 +1165,20 @@ body{
   }
 }
 
+
+/* Premium thumbnail + play button polish */
+.drive-player{border-radius:16px;overflow:hidden;isolation:isolate;background:#080b08;box-shadow:0 14px 36px rgba(0,0,0,.22);transform:translateZ(0)}
+.drive-preview-image{display:block;z-index:1;object-fit:cover;object-position:center;transition:transform .45s cubic-bezier(.2,.75,.25,1),filter .35s ease}
+.drive-player:hover .drive-preview-image{transform:scale(1.035);filter:brightness(.82)}
+.drive-play-overlay{z-index:3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid rgba(255,255,255,.13);border-radius:inherit;background:linear-gradient(180deg,rgba(6,10,6,.08),rgba(6,10,6,.38));backdrop-filter:none}
+.drive-play-overlay span{width:66px;height:66px;display:grid;place-items:center;padding-left:5px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:var(--green);color:#071006;font-size:24px;box-shadow:0 0 0 8px rgba(156,255,0,.13),0 10px 30px rgba(0,0,0,.35);transition:transform .2s ease,box-shadow .2s ease}
+.drive-play-overlay small{padding:8px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(5,8,5,.7);color:#fff;font-size:10px;font-weight:800;letter-spacing:.16em}
+.drive-play-overlay:hover{background:linear-gradient(180deg,rgba(6,10,6,.02),rgba(6,10,6,.52))}
+.drive-play-overlay:hover span{transform:scale(1.08);box-shadow:0 0 0 11px rgba(156,255,0,.16),0 12px 34px rgba(0,0,0,.4)}
+.drive-player.is-loaded .drive-preview-image{display:none}
+.drive-play-overlay[hidden]{display:none!important}
+@media(max-width:600px){.drive-play-overlay span{width:58px;height:58px}.drive-play-overlay small{font-size:9px}}
+
 </style>
 
 </head>
@@ -1917,9 +1931,8 @@ loadAdminProjects();
 
 
 <script>
-/* Hover-to-preview for Google Drive portfolio videos.
-   Only one player is loaded at a time; leaving a card or hovering another card
-   unloads the previous iframe so its playback/audio stops. */
+/* Premium click-to-play Drive cards: keep thumbnail and custom play button visible
+   until the visitor explicitly presses play. Only one iframe is loaded at a time. */
 (function(){
   const players = Array.from(document.querySelectorAll('.drive-player'));
   let activePlayer = null;
@@ -1927,13 +1940,11 @@ loadAdminProjects();
   function stopPlayer(player){
     if(!player) return;
     const frame = player.querySelector('iframe');
-    const overlay = player.querySelector('.drive-play-overlay');
     player.classList.remove('is-loaded');
     if(frame){
       frame.src = 'about:blank';
       frame.removeAttribute('src');
     }
-    if(overlay) overlay.hidden = false;
     if(activePlayer === player) activePlayer = null;
   }
 
@@ -1943,13 +1954,12 @@ loadAdminProjects();
     if(!frame) return;
     if(activePlayer && activePlayer !== player) stopPlayer(activePlayer);
     players.forEach(function(other){ if(other !== player) stopPlayer(other); });
-    activePlayer = player;
     const baseUrl = frame.getAttribute('data-src');
-    if(baseUrl && !player.classList.contains('is-loaded')){
-      player.classList.add('is-loaded');
-      if(overlay) overlay.hidden = true;
-      frame.src = baseUrl + (baseUrl.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
-    }
+    if(!baseUrl) return;
+    activePlayer = player;
+    player.classList.add('is-loaded');
+    if(overlay) overlay.hidden = true;
+    frame.src = baseUrl + (baseUrl.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1';
   }
 
   players.forEach(function(player){
@@ -1957,16 +1967,8 @@ loadAdminProjects();
     const overlay = player.querySelector('.drive-play-overlay');
     if(!frame) return;
     frame.removeAttribute('src');
-    if(overlay) overlay.hidden = false;
-
-    // Start preview as soon as the pointer enters the video card.
-    player.addEventListener('mouseenter', function(){ playPlayer(player); });
-    player.addEventListener('focusin', function(){ playPlayer(player); });
-    // Stop it when the pointer leaves, keeping the page from playing multiple videos.
-    player.addEventListener('mouseleave', function(){ stopPlayer(player); });
-
-    // Touchscreens have no hover, so tap still starts the preview.
     if(overlay){
+      overlay.hidden = false;
       overlay.addEventListener('click', function(event){
         event.preventDefault();
         event.stopPropagation();
